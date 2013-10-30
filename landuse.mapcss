@@ -209,6 +209,7 @@ area|z5-[tourism]
 
 area.landuse|z5- {
   layer: -10;
+  z-index: eval(-1*area(prop(geo)));
 }
 area.landuse|z14- {
   color: eval(prop("fill-color"));
