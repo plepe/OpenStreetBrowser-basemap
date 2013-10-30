@@ -1,7 +1,8 @@
-// TODO: as long as we can't set width from eval ...
+/* TODO: as long as we can't set width from eval ... */
 canvas {
   width: 0.5;
   width: 1;
+  width: 1.5;
   width: 2;
   width: 3;
   width: 4;
@@ -15,6 +16,13 @@ canvas {
   width: 12;
   width: 13;
   width: 14;
+  width: 15;
+  width: 16;
+  width: 17;
+  width: 18;
+  width: 19;
+  width: 20;
+  width: 21;
   casing-width: 0.5;
   casing-width: 1;
   casing-width: 1.5;
@@ -28,20 +36,58 @@ canvas {
 line|z5-9[highway=primary]
 {
   color: #deca00;
-  text-halo-fill: #ffce00;
   width: eval(switch(zoom(),
     5,     0.5,
     "6;7", 1.0,
     "8;9", 1.5
   ));
+  z-index: 10;
 }
 line|z10-[highway=primary]
 {
   set .highway_type=major;
-  width: eval(round(power(zoom()-8, 1.1)));
+  width: eval(round(power(zoom()-9, 1.2))+1);
   color: #ffce00;
   text-halo-fill: #ffce00;
+  z-index: 10;
 }
+
+line|z5-9[highway=secondary]
+{
+  color: #ded042;
+  width: eval(switch(zoom(),
+    "7", 1.0,
+    "8;9", 1.5
+  ));
+  z-index: 9;
+}
+line|z10-[highway=secondary]
+{
+  set .highway_type=major;
+  width: eval(round(power(zoom()-10, 1.2))+1);
+  color: #ffef4c;
+  text-halo-fill: #ffce00;
+  z-index: 9;
+}
+
+line|z8-11[highway=tertiary]
+{
+  color: #ded896;
+  width: eval(switch(zoom(),
+    "8", 1.0,
+    "9;10", 1.5
+  ));
+  z-index: 8;
+}
+line|z11-[highway=tertiary]
+{
+  set .highway_type=major;
+  width: eval(round(power(zoom()-11, 1.2)))+1;
+  color: #fff8b5;
+  text-halo-fill: #ffce00;
+  z-index: 8;
+}
+
 line.highway_type {
   casing-width: eval(round(0.5+prop(width)/4)/2);
   casing-color: #909090;
@@ -52,10 +98,10 @@ line.highway_type {
     cond(prop(width)>=14, 13,
     cond(prop(width)>=11, 11,
     cond(prop(width)>=9, 9,
-    cond(prop(width)>6, 8
+    cond(prop(width)>=6, 8
   )))));
   text-position: line;
-  text: eval(cond(prop(width)>6; tag(name)));
+  text: eval(cond(prop(width)>=6; tag(name)));
 }
 
 line|z10-[highway=primary][tunnel],
