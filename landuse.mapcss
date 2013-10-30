@@ -1,6 +1,5 @@
 /* LANDUSE */
 area|z5-[waterway=dock],
-area|z5-[waterway=riverbank],
 area|z5-[landuse=water],
 area|z5-[landuse=reservoir],
 area|z5-[landuse=lake],
@@ -9,7 +8,15 @@ area|z5-[landuse=basin]
 {
   fill-color: #7eb9e3;
   set .landuse;
+
+  set .landuse_text;
+  text-color: #156299;
 }
+area|z5-[waterway=riverbank] {
+  fill-color: #7eb9e3;
+  set .landuse;
+}
+
 area|z5-[natural=land]
 {
   fill-color: #f2efd9;
@@ -22,6 +29,9 @@ area|z5-[landuse=grass]
 {
   fill-color: #9ce69c;
   set .landuse;
+
+  set .landuse_text;
+  text-color: #000000;
 }
 area|z5-[leisure=golf_course],
 area|z5-[leisure=playground],
@@ -93,6 +103,12 @@ area|z14-[landuse=cemetery]
 {
   fill-image: url('img/grave_yard.png');
   set .landuse;
+}
+
+area|z5-[leisure=park]
+{
+  text-color: #707070;
+  set .landuse_text;
 }
 
 area|z5-[landuse=common],
@@ -209,7 +225,8 @@ area|z5-[tourism]
 
 area.landuse|z5- {
   layer: -10;
-  z-index: eval(-1*area(prop(geo)));
+  set area=eval(area(prop("geo")));
+  z-index: eval(-1*tag("area"));
 }
 area.landuse|z14- {
   color: eval(prop("fill-color"));
@@ -229,3 +246,24 @@ area|z5-[leisure=nature_reserve]
 
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
 }
+
+area.landuse_text|z5-[area>1500][area<=6000]::label {
+  text-halo-radius: 1;
+  font-size: 10;
+  text-wrap-width: 20;
+  font-style: italic;
+  text: eval(tag(name));
+  // text-halo-color: eval(prop("fill-color", default));
+  text-color: eval(prop("text-color", default));
+}
+area.landuse_text|z5-[area>6000][area<=500000]::label {
+  text-halo-radius: 1;
+  font-size: 12;
+  font-style: italic;
+  text-wrap-width: 20;
+  text: eval(tag(name));
+  // text-halo-color: eval(prop("fill-color", default));
+  text-color: eval(prop("text-color", default));
+}
+
+// TODO: english translations of names
