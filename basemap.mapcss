@@ -1,0 +1,5 @@
+canvas {
+  fill-color: #f2efd9;
+}
+
+@import url("landuse.mapcss");

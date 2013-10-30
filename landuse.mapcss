@@ -1,0 +1,230 @@
+/* LANDUSE */
+area|z5-[waterway=dock],
+area|z5-[waterway=riverbank],
+area|z5-[landuse=water],
+area|z5-[landuse=reservoir],
+area|z5-[landuse=lake],
+area|z5-[natural=water],
+area|z5-[landuse=basin]
+{
+  fill-color: #7eb9e3;
+  set .landuse;
+}
+area|z5-[natural=land]
+{
+  fill-color: #f2efd9;
+  set .landuse;
+}
+area|z5-[leisure=park],
+area|z5-[landuse=village_green],
+area|z5-[landuse=recreation_ground],
+area|z5-[landuse=grass]
+{
+  fill-color: #9ce69c;
+  set .landuse;
+}
+area|z5-[leisure=golf_course],
+area|z5-[leisure=playground],
+area|z5-[leisure=sports_centre],
+area|z5-[leisure=track],
+area|z5-[leisure=pitch],
+area|z5-[leisure=water_park]
+{
+  fill-color: #8bccb3;
+  set .landuse;
+}
+area|z5-[leisure=piste]
+{
+  fill-color: #faf7e0;
+  set .landuse;
+}
+area|z5-[landuse=wood],
+area|z5-[landuse=forest],
+area|z5-[natural=wood],
+area|z5-[natural=scrub]
+{
+  fill-color: #72c063;
+  set .landuse;
+}
+area|z5-[natural=wetland],
+area|z5-[natural=marsh]
+{
+  fill-color: #96f992;
+  set .landuse;
+}
+area|z5-[natural=glacier]
+{
+  fill-color: #84f9ea;
+  set .landuse;
+}
+
+area|z5-[natural=scree],
+area|z5-[natural=heath]
+{
+  fill-color: #92da4e;
+  set .landuse;
+}
+
+area|z5-[natural=mud]
+{
+  fill-color: #cdc950;
+  set .landuse;
+}
+
+area|z5-[natural=beach]
+{
+  fill-color: #fad16c;
+  set .landuse;
+}
+
+area|z5-[natural=cliff],
+area|z5-[natural=rock]
+{
+  fill-color: #dedede;
+  set .landuse;
+}
+
+area|z5-[landuse=cemetery]
+{
+  fill-color: #8acb94;
+  set .landuse;
+}
+area|z14-[landuse=cemetery]
+{
+  fill-image: url('img/grave_yard.png');
+  set .landuse;
+}
+
+area|z5-[landuse=common],
+area|z5-[landuse=garden],
+area|z5-[landuse=meadow],
+area|z5-[natural=meadow],
+area|z5-[natural=fell],
+area|z5-[landuse=farm],
+area|z5-[landuse=greenhouse_horticulture],
+area|z5-[landuse=farmyard],
+area|z5-[landuse=farmland],
+area|z5-[landuse=vineyard],
+area|z5-[landuse=orchard]
+{
+  fill-color: #b0cc8a;
+  set .landuse;
+}
+
+area|z5-[landuse=quarry],
+area|z5-[landuse=landfill],
+area|z5-[landuse=brownfield],
+area|z5-[landuse=railway],
+area|z5-[landuse=construction],
+area|z5-[landuse=industrial],
+area|z5-[amenity=bus_station],
+area|z5-[aeroway=aerodrome],
+area|z5-[aeroway=apron],
+area|z5-[power=station],
+area|z5-[power=sub_station],
+area|z5-[power=generator]
+{
+  fill-color: #b7b8cc;
+  set .landuse;
+}
+
+area|z5-[landuse=military],
+area|z5-[military=barracks],
+area|z5-[military=airfield]
+{
+  fill-color: #93a65b;
+  set .landuse;
+}
+
+area|z5-[landuse=residential],
+area|z5-[landuse=allotments]
+{
+  fill-color: #ccb18b;
+  set .landuse;
+}
+
+area|z5-[landuse=school],
+area|z5-[landuse=college],
+area|z5-[amenity=cinema],
+area|z5-[amenity=kindergarten],
+area|z5-[amenity=library],
+area|z5-[amenity=school],
+area|z5-[amenity=theatre],
+area|z5-[amenity=arts_centre],
+area|z5-[amenity=university]
+{
+  fill-color: #e39ccf;
+  set .landuse;
+}
+
+area|z5-[amenity=hospital],
+area|z5-[amenity=emergency_phone],
+area|z5-[amenity=fire_station],
+area|z5-[amenity=police]
+{
+  fill-color: #df9ea5;
+  set .landuse;
+}
+
+area|z5-[amenity=pharmacy],
+area|z5-[amenity=baby_hatch],
+area|z5-[amenity=dentist],
+area|z5-[amenity=doctors],
+area|z5-[amenity=veterinary]
+{
+  fill-color: #abffcb;
+  set .landuse;
+}
+
+area|z5-[amenity=government],
+area|z5-[amenity=gouvernment],
+area|z5-[amenity=public_building],
+area|z5-[amenity=court_house],
+area|z5-[amenity=embassy],
+area|z5-[amenity=prison],
+area|z5-[amenity=townhall]
+{
+  fill-color: #f0dba5;
+  set .landuse;
+}
+
+area|z5-[amenity=marketplace],
+area|z5-[shop]
+{
+  fill-color: #ffe285;
+  set .landuse;
+}
+
+area|z5-[historic]
+{
+  fill-color: #e0c28d;
+  set .landuse;
+}
+
+area|z5-[tourism]
+{
+  fill-color: #cc8bbf;
+  set .landuse;
+}
+
+area.landuse|z5- {
+  layer: -10;
+}
+area.landuse|z14- {
+  color: eval(prop("fill-color"));
+  width: 1;
+  linecap: round;
+  linejoin: round;
+}
+
+area|z5-[leisure=nature_reserve]
+{
+  color: #7acc49;
+
+  // make sure the following eval statement works
+  width: 1;
+  width: 2;
+  width: 4;
+
+  width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
+}
