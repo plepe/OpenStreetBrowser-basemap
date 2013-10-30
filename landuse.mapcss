@@ -219,6 +219,22 @@ area|z5-[tourism]
   set .landuse;
 }
 
+area|z5-[place=island],
+area|z14-[place=islet]
+{
+  text-color: #56533f;
+  text-halo-color: #f2efd9;
+  set .landuse_text;
+}
+
+area|z5-[region:type=mountain_range],
+area|z5-[type=mountain_range]
+{
+  text-color: #707070;
+  text-halo-color: #a0a0a0;
+  set .landuse_text;
+}
+
 area.landuse|z5- {
   layer: -10;
   set area=eval(area(prop("geo")));
