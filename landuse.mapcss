@@ -11,6 +11,7 @@ area|z5-[landuse=basin]
 
   set .landuse_text;
   text-color: #156299;
+  text-halo-color: #7eb9e3;
 }
 area|z5-[waterway=riverbank] {
   fill-color: #7eb9e3;
@@ -32,6 +33,7 @@ area|z5-[landuse=grass]
 
   set .landuse_text;
   text-color: #000000;
+  text-halo-color: #9ce69c;
 }
 area|z5-[leisure=golf_course],
 area|z5-[leisure=playground],
@@ -103,12 +105,6 @@ area|z14-[landuse=cemetery]
 {
   fill-image: url('img/grave_yard.png');
   set .landuse;
-}
-
-area|z5-[leisure=park]
-{
-  text-color: #707070;
-  set .landuse_text;
 }
 
 area|z5-[landuse=common],
@@ -252,18 +248,18 @@ area.landuse_text|z5-[area>1500][area<=6000]::label {
   font-size: 10;
   text-wrap-width: 20;
   font-style: italic;
-  text: eval(tag(name));
-  // text-halo-color: eval(prop("fill-color", default));
+  text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
+  text-halo-color: eval(prop("text-halo-color", default));
   text-color: eval(prop("text-color", default));
+  layer: 10;
 }
 area.landuse_text|z5-[area>6000][area<=500000]::label {
   text-halo-radius: 1;
   font-size: 12;
   font-style: italic;
   text-wrap-width: 20;
-  text: eval(tag(name));
-  // text-halo-color: eval(prop("fill-color", default));
+  text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
+  text-halo-color: eval(prop("text-halo-color", default));
   text-color: eval(prop("text-color", default));
+  layer: 10;
 }
-
-// TODO: english translations of names
