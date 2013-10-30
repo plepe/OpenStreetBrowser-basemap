@@ -1,0 +1,73 @@
+// TODO: as long as we can't set width from eval ...
+canvas {
+  width: 0.5;
+  width: 1;
+  width: 2;
+  width: 3;
+  width: 4;
+  width: 5;
+  width: 6;
+  width: 7;
+  width: 8;
+  width: 9;
+  width: 10;
+  width: 11;
+  width: 12;
+  width: 13;
+  width: 14;
+  casing-width: 0.5;
+  casing-width: 1;
+  casing-width: 1.5;
+  casing-width: 2;
+  font-size: 8;
+  font-size: 9;
+  font-size: 11;
+  font-size: 13;
+}
+
+line|z5-9[highway=primary]
+{
+  color: #deca00;
+  text-halo-fill: #ffce00;
+  width: eval(switch(zoom(),
+    5,     0.5,
+    "6;7", 1.0,
+    "8;9", 1.5
+  ));
+}
+line|z10-[highway=primary]
+{
+  set .highway_type=major;
+  width: eval(round(power(zoom()-8, 1.1)));
+  color: #ffce00;
+  text-halo-fill: #ffce00;
+}
+line.highway_type {
+  casing-width: eval(round(0.5+prop(width)/4)/2);
+  casing-color: #909090;
+  linecap: round;
+  linejoin: round;
+  casing-linecap: butt;
+  font-size: eval(
+    cond(prop(width)>=14, 13,
+    cond(prop(width)>=11, 11,
+    cond(prop(width)>=9, 9,
+    cond(prop(width)>6, 8
+  )))));
+  text-position: line;
+  text: eval(cond(prop(width)>6; tag(name)));
+}
+
+line|z10-[highway=primary][tunnel],
+line|z10-[highway=primary_link][tunnel]
+{
+  color: #d8b321;
+}
+
+line.highway_type::base_casing {
+  layer: -9;
+  casing-linecap: round;
+  casing-width: eval(prop('casing-width', 'default'));
+  casing-color: eval(prop('casing-color', 'default'));
+  width: eval(prop('width', 'default'));
+}
