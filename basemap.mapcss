@@ -4,3 +4,4 @@ canvas {
 
 @import url("landuse.mapcss");
 @import url("roads.mapcss");
+@import url("places.mapcss");

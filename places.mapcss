@@ -1,0 +1,96 @@
+node[place=city][population>1000000]
+{
+  layer: 9;
+  z-index: 1;
+}
+
+node|z2-3[place=continent],
+node|z10-14[place=city][population>=1000000],
+node|z10-14[place=city][population>=200000],
+node|z10-14[place=city],
+node|z13-14[place=town][population>=30000],
+node|z13-14[place=town],
+node|z15-[place=suburb],
+node|z15-[place=village]
+{
+  set .place=1;
+}
+node|z6-9[place=city][population>=1000000],
+node|z8-9[place=city][population>=200000],
+node|z8[place=city],
+node|z10-12[place=town][population>=30000],
+node|z10-12[place=town],
+node|z13-14[place=village]
+{
+  set .place=2;
+}
+node|z4-5[place=city][population>=1000000],
+node|z6-7[place=city][population>=200000],
+node|z7[place=city],
+node|z8-9[place=town][population>=30000],
+node|z9[place=town],
+node|z11-12[place=village],
+node|z13-14[place=hamlet],
+node|z15-16[place=isolated_dwelling]
+{
+  set .place=3;
+}
+node|z1[place=continent],
+node|z13-14[place=suburb],
+node|z15-[place=hamlet],
+node|z17-[place=isolated_dwelling]
+{
+  set .place=4;
+}
+node|z17-[place=locality]
+{
+  set .place=5;
+}
+
+node[.place=1]
+{
+  font-size: 12;
+  text-color: #000000;
+  text-halo-radius: 2;
+  text-halo-color: #ffffff;
+}
+node[.place=2]::icon
+{
+  layer: 8;
+  icon-image: url('img/city7.png');
+}
+node[.place=2] {
+  font-size: 10;
+  text-offset: 5;
+  text-color: #000000;
+  text-halo-radius: 2;
+  text-halo-color: #ffffff;
+}
+node[.place=3]::icon
+{
+  layer: 8;
+  icon-image: url('img/city5.png');
+}
+node[.place=3] {
+  font-size: 8;
+  text-offset: 5;
+  text-color: #000000;
+  text-halo-radius: 2;
+  text-halo-color: #ffffff;
+}
+node[.place=4] {
+  font-size: 10;
+  text-color: #000000;
+  text-halo-radius: 1;
+  text-halo-color: #ffffff;
+}
+node[.place=5] {
+  font-size: 8;
+  text-color: #000000;
+  text-halo-radius: 1;
+  text-halo-color: #ffffff;
+}
+
+node.place {
+  text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
+}
