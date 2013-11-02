@@ -1,5 +1,4 @@
 /*
- * TODO: countries, state, region
  * TODO: ocean, sea, island, islet
  * TODO: translation in smaller letters
  * TODO: point-allow-overlap=true
@@ -52,6 +51,28 @@ node|z15-[place=village]
 {
   set .place=5; // no dot, font-size 12
 }
+node|z2-3[place=country][population>=20000000],
+node|z4-5[place=country][population>=1000000][population<20000000],
+node|z6-7[place=country][population<1000000]
+{
+  set .place=6; // no dot, font-size 8 bold
+}
+node|z4-5[place=country][population>=20000000],
+node|z6-7[place=country][population>=1000000][population<20000000],
+node|z8-9[place=country][population<1000000],
+node|z7-8[place=state],
+node|z9-11[place=region]
+{
+  set .place=7; // no dot, font-size 10 bold
+}
+node|z6-8[place=country][population>=20000000],
+node|z8-10[place=country][population>=1000000][population<20000000],
+node|z10[place=country][population<1000000],
+node|z11[place=state],
+node|z12-14[place=region]
+{
+  set .place=8; // no dot, font-size 12 bold
+}
 
 node[.place=1]::icon
 {
@@ -94,6 +115,30 @@ node[.place=5]
   font-size: 12;
   text-color: #000000;
   text-halo-radius: 2;
+  text-halo-color: #ffffff;
+}
+node[.place=6]
+{
+  font-size: 8;
+  text-color: #333333;
+  font-weight: bold;
+  text-halo-radius: 1;
+  text-halo-color: #ffffff;
+}
+node[.place=7]
+{
+  font-size: 10;
+  text-color: #333333;
+  font-weight: bold;
+  text-halo-radius: 1;
+  text-halo-color: #ffffff;
+}
+node[.place=8]
+{
+  font-size: 12;
+  text-color: #333333;
+  font-weight: bold;
+  text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
 
