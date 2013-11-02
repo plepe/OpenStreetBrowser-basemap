@@ -1,3 +1,9 @@
+/*
+ * TODO: countries, state, region
+ * TODO: ocean, sea, island, islet
+ * TODO: translation in smaller letters
+ * TODO: point-allow-overlap=true
+ */
 node[place=city][population>1000000]
 {
   layer: 9;
