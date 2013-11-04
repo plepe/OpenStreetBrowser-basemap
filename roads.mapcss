@@ -278,9 +278,13 @@ line|z17-[.highway_type=small]
   font-size: 10;
   text: eval(tag(name));
 }
-line[.highway_type=small]
+line[.highway_type=small][!bridge]
 {
   casing-width: ;
+}
+line.highway_type[bridge]
+{
+  casing-color: #303030;
 }
 
 line|z10-[highway=primary][tunnel],
