@@ -71,7 +71,7 @@ line|z9-[highway=trunk]
   set .highway_type=motorway;
   width: eval(round(power(zoom()-9, 1.2))+1);
   color: #ff8a00;
-  text-halo-fill: #ff8a00;
+  text-halo-color: #ff8a00;
   z-index: 11;
 }
 
@@ -91,7 +91,7 @@ line|z10-[highway=primary]
   set .highway_type=major;
   width: eval(round(power(zoom()-9, 1.2))+1);
   color: #ffce00;
-  text-halo-fill: #ffce00;
+  text-halo-color: #ffce00;
   z-index: 10;
 }
 
@@ -109,7 +109,7 @@ line|z10-[highway=secondary]
   set .highway_type=major;
   width: eval(round(power(zoom()-10, 1.2))+1);
   color: #ffef4c;
-  text-halo-fill: #ffce00;
+  text-halo-color: #ffef4c;
   z-index: 9;
 }
 
@@ -127,7 +127,7 @@ line|z11-[highway=tertiary]
   set .highway_type=major;
   width: eval(round(power(zoom()-11, 1.2)))+1;
   color: #fff8b5;
-  text-halo-fill: #ffce00;
+  text-halo-color: #fff8b5;
   z-index: 8;
 }
 
@@ -150,7 +150,7 @@ line|z14-[highway=residential]
   set .highway_type=minor;
   width: eval(round(power(zoom()-12, 1.4)))+1;
   color: #ffffff;
-  text-halo-fill: #ffffff;
+  text-halo-color: #ffffff;
   z-index: 7;
 }
 
@@ -171,7 +171,7 @@ line|z14-[highway=living_street]
   set .highway_type=pedestrian;
   width: eval(round(power(zoom()-12, 1.4)))+1;
   color: #cdcdcd;
-  text-halo-fill: #cdcdcd;
+  text-halo-color: #cdcdcd;
   z-index: 6;
 }
 
@@ -190,7 +190,7 @@ line|z15-[highway=service]
   set .highway_type=pedestrian;
   width: eval(round(power(zoom()-13, 1.4)))+1;
   color: #ffffff;
-  text-halo-fill: #ffffff;
+  text-halo-color: #ffffff;
   z-index: 5;
 }
 
@@ -217,14 +217,14 @@ line|z15-[highway=platform]
   set .highway_type=path;
   width: eval(round(power(zoom()-11, 0.7)))+0;
   color: #cdcdcd;
-  text-halo-fill: #cdcdcd;
+  text-halo-color: #cdcdcd;
   z-index: 4;
 }
 
 line|z12-[highway=track]
 {
   color: #a77300;
-  text-halo-fill: #a77300;
+  text-halo-color: #a77300;
   width: eval(switch(zoom(),
     "12;13", 0.5,
     "14;15", 1,
@@ -238,7 +238,7 @@ line|z12-[highway=track]
 line|z12-[highway=path]
 {
   color: #a77300;
-  text-halo-fill: #a77300;
+  text-halo-color: #a77300;
   width: eval(switch(zoom(),
     "12;13", 0.25,
     "14;15", 0.5,
@@ -263,6 +263,7 @@ line.highway_type
     cond(prop(width)>=6, 8
   )))));
   text-position: line;
+  text-halo-radius: 1;
   text: eval(cond(prop(width)>=6; tag(name)));
 }
 line|z16-[.highway_type=small]
