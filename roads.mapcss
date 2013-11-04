@@ -318,11 +318,19 @@ line.path|z15-[tunnel]
 {
   color: #a7a7a7;
 }
+line[tunnel]
+{
+  text-halo-radius: 0;
+  casing-dashes: 5,5;
+  casing-linecap: butt;
+}
 
 line.highway_type::base_casing {
   layer: -9;
   casing-linecap: round;
   casing-width: eval(prop('casing-width', 'default'));
   casing-color: eval(prop('casing-color', 'default'));
+  casing-dashes: eval(prop('casing-dashes', 'default'));
+  casing-linecap: eval(prop('casing-linecap', 'default'));
   width: eval(prop('width', 'default'));
 }
