@@ -214,7 +214,7 @@ line|z15-[highway=bridleway],
 line|z15-[highway=steps],
 line|z15-[highway=platform]
 {
-  set .highway_type=path;
+  set .highway_type=footway;
   width: eval(round(power(zoom()-11, 0.7))+0);
   color: #cdcdcd;
   text-halo-color: #cdcdcd;
@@ -258,15 +258,18 @@ line.highway_type
   linecap: round;
   linejoin: round;
   casing-linecap: butt;
+  font-size: ;
   font-size: eval(
     cond(prop(width)>=13, 13,
     cond(prop(width)>=10, 11,
     cond(prop(width)>=8, 9,
-    cond(prop(width)>=5, 8
-  )))));
+    cond(prop(width)>=5, 8,
+    cond(zoom()>=17, 10,
+    cond(zoom()>=16, 8
+  )))))));
   text-position: line;
   text-halo-radius: 1;
-  text: eval(cond(prop(width)>=6; tag(name)));
+  text: eval(cond(prop('font-size'); tag(name)));
 }
 line|z16[.highway_type=small]
 {
