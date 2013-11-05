@@ -267,19 +267,15 @@ line.highway_type
     cond(zoom()>=17, 10,
     cond(zoom()>=16, 8
   )))))));
-  text-position: line;
   text-halo-radius: 1;
-  text: eval(cond(prop('font-size'); tag(name)));
 }
 line|z16[.highway_type=small]
 {
   font-size: 8;
-  text: eval(tag(name));
 }
 line|z17-[.highway_type=small]
 {
   font-size: 10;
-  text: eval(tag(name));
 }
 line[.highway_type=small][!bridge]
 {
@@ -333,4 +329,16 @@ line.highway_type::base_casing {
   casing-dashes: eval(prop('casing-dashes', 'default'));
   casing-linecap: eval(prop('casing-linecap', 'default'));
   width: eval(prop('width', 'default'));
+}
+line.highway_type::label {
+  layer: 11;
+  text-position: line;
+  text-spacing: 128;
+  font-size: eval(prop('font-size', 'default'));
+  text-halo-color: eval(prop('text-halo-color', 'default'));
+  text-halo-radius: eval(prop('text-halo-radius', 'default'));
+  text-color: eval(prop('text-color', 'default'));
+  font-style: eval(prop('font-style', 'default'));
+  font-size: eval(prop('font-size', 'default'));
+  text: eval(cond(prop('font-size'); tag(name)));
 }
