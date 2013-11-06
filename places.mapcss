@@ -4,7 +4,6 @@
  */
 node[place=city][population>1000000]
 {
-  layer: 9;
   z-index: 1;
 }
 
@@ -75,7 +74,6 @@ node|z12-14[place=region]
 
 node[.place=1]::icon
 {
-  layer: 8;
   icon-image: url('img/city5.png');
 }
 node[.place=1] {
@@ -87,7 +85,6 @@ node[.place=1] {
 }
 node[.place=2]::icon
 {
-  layer: 8;
   icon-image: url('img/city7.png');
 }
 node[.place=2] {
@@ -186,4 +183,8 @@ node|z15-[place=islet]
 /* Final */
 node.place {
   text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
+  layer: 8;
+}
+node.place::icon {
+  layer: 9;
 }
