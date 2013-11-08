@@ -1,0 +1,89 @@
+canvas
+{
+  width: 0.5;
+  width: 1;
+  width: 1.5;
+  width: 2;
+  width: 4;
+  width: 6;
+  casing-width: 1;
+  casing-width: 2;
+  casing-width: 3;
+  casing-width: 4;
+}
+
+line|z5-11[railway=rail][usage=main]
+{
+  width: eval(
+    cond(zoom()>=10, 2,
+    cond(zoom()>=8, 1.5,
+    cond(zoom()>=6, 1,
+    cond(zoom()>=5, 0.5,
+    0.25
+  )))));
+  set .railway;
+}
+line|z8-11[railway=rail][usage!=siding][usage!=yard]
+{
+  width: eval(
+    cond(zoom()>=10, 1.5,
+                     1
+  ));
+  set .railway;
+}
+
+line|z12-[railway=rail]
+{
+  width: 2;
+  casing-width: eval(
+    cond(zoom()>=16, 4,
+    cond(zoom()>=14, 3,
+    cond(zoom()>=12, 2,
+                     1
+  )))));
+  set .railway;
+}
+line|z12-[railway=rail]::dash
+{
+  width: eval(
+    cond(zoom()>=14, 6,
+                     4
+  );
+  dashes: 1,4;
+}
+
+line.railway
+{
+  color: #606060;
+  casing-color: #b7b8cc;
+  z-index: 14;
+}
+line.railway[usage=main]
+{
+  color: #404040;
+  z-index: 14.2;
+}
+line.railway[usage=siding],
+line.railway[usage=yard]
+{
+  color: #707070;
+  z-index: 14.3;
+}
+
+line.railway::dash
+{
+  color: #606060;
+  object-z-index: 1;
+  z-index: 14;
+}
+line.railway[usage=main]::dash
+{
+  color: #404040;
+  z-index: 14.2;
+}
+line.railway[usage=siding]::dash,
+line.railway[usage=yard]::dash
+{
+  color: #707070;
+  z-index: 14.3;
+}

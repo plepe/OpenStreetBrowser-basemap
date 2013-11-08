@@ -5,4 +5,5 @@ canvas {
 @import url("landuse.mapcss");
 @import url("water.mapcss");
 @import url("roads.mapcss");
+@import url("rail.mapcss");
 @import url("places.mapcss");
