@@ -51,7 +51,7 @@ line|z12-[railway=rail]::dash
     cond(zoom()>=14, 6,
                      4
   );
-  dashes: 1,4;
+  dashes: 0,2,1,2;
 }
 
 line.railway
@@ -96,4 +96,14 @@ line.railway|z12-[bridge]::casing
   casing-width: 1;
   casing-color: #000000;
   color: #ffffff00;
+}
+line.railway|z12-[tunnel],
+line.railway|z12-[tunnel]::casing
+{
+  dashes: 5,5;
+  casing-dashes: 5,5;
+}
+line.railway|z12-[tunnel]::dash
+{
+  dashes: 0,2,1,7;
 }
