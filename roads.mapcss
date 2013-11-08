@@ -1,6 +1,6 @@
 /* TODO: as long as we can't set width from eval ... */
 canvas {
-  width: 0.5;
+  width: 0.25;
   width: 0.5;
   width: 1;
   width: 1.5;
@@ -252,54 +252,6 @@ line|z12-[highway=path]
   set .highway_type=small;
 }
 
-line[waterway]
-{
-  color: #7eb9e3;
-  text-halo-color: #7eb9e3;
-  text-color: #156299;
-  text-style: italic;
-  z-index: 0;
-}
-line|z5-10[waterway=river],
-line|z5-10[waterway=canal]
-{
-  width: eval(switch(zoom(),
-    "5", 0.5,
-    "6", 1,
-    "7", 1.5,
-    "8;9", 2
-  ));
-}
-line|z15-[waterway=river]
-{
-  // on lower zoom levels we use the same curve as for highways but smaller; on higher zoom levels we assume 20m as default width
-  // we could eval the tag 'width' or 'est_width', but most larger rivers have natural=riverbank anyway, therefore we don't need wide lines (even worse, they could obscure islands, ...)
-
-  width: eval(round(max(power(zoom()-9, 1.1)+0, metric('20m'))));
-  set .highway_type=waterway;
-}
-
-line|z11-[waterway=canal]
-{
-  width: eval(round(max(power(zoom()-9, 1.1)+0, metric('18m'))));
-  set .highway_type=waterway;
-}
-
-line|z10-14[waterway=stream]
-{
-  width: eval(switch(zoom(),
-    "10;11", 0.5,
-    "12;13", 1,
-    "14", 1.5
-  ));
-}
-line|z15-[waterway=stream]
-{
-  width: eval(round(max(2, metric('3m'))));
-  set .highway_type=waterway;
-}
-
-
 line.highway_type
 {
   casing-width: eval(round(0.5+prop(width)/4)/2);
@@ -326,8 +278,7 @@ line|z17-[.highway_type=small]
 {
   font-size: 10;
 }
-line[.highway_type=small][!bridge],
-line[.highway_type=waterway][!bridge]
+line[.highway_type=small][!bridge]
 {
   casing-width: ;
 }

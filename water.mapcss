@@ -1,0 +1,108 @@
+/* waterways don't have a line fill, they only have a casing. Therefore
+ * they don't interfere with casings of roads on the same layer (often
+ * the rendering of waterways is larger than the bridge).
+ */
+
+/* TODO: as long as we can't set width from eval ... */
+canvas {
+  casing-width: 16.5;
+  casing-width: 15;
+  casing-width: 8.5;
+  casing-width: 7.5;
+  casing-width: 6;
+  casing-width: 4.5;
+  casing-width: 4;
+  casing-width: 3.5;
+  casing-width: 3;
+  casing-width: 2.5;
+  casing-width: 2;
+  casing-width: 1.5;
+  casing-width: 1;
+  casing-width: 0.5;
+  casing-width: 0.25;
+  font-size: 12;
+  font-size: 10;
+  font-size: 8;
+}
+
+line[waterway]
+{
+  casing-color: #7eb9e3;
+  z-index: 0;
+  set .waterway;
+}
+line|z5-10[waterway=river],
+line|z5-10[waterway=canal]
+{
+  casing-width: eval(switch(zoom(),
+    "5", 0.5,
+    "6", 1,
+    "7", 1.5,
+    "8;9", 2
+  )/2);
+  set .waterway;
+}
+line|z11-[waterway=river]
+{
+  // on lower zoom levels we use the same curve as for highways but smaller; on higher zoom levels we assume 20m as default width
+  // we could eval the tag 'width' or 'est_width', but most larger rivers have natural=riverbank anyway, therefore we don't need wide lines (even worse, they could obscure islands, ...)
+
+  casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('20m')))/2);
+  set .waterway;
+}
+
+line|z11-[waterway=canal]
+{
+  casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('18m')))/2);
+  set .waterway;
+}
+
+line|z12-[waterway=river]::label,
+line|z12-[waterway=canal]::label
+{
+  text: eval(tag(name));
+  font-size: eval(
+    cond(zoom()>=16, 12,
+    cond(zoom()>=14, 10,
+                     8
+  )));
+}
+
+line|z10-14[waterway=stream]
+{
+  casing-width: eval(switch(zoom(),
+    "10;11", 0.5,
+    "12;13", 1,
+    "14", 1.5
+  )/2);
+  set .waterway;
+}
+line|z15-[waterway=stream]
+{
+  casing-width: eval(round(max(2, metric('3m')))/2);
+  set .waterway;
+}
+line|z15-[waterway=stream]::label
+{
+  text: eval(tag(name));
+  font-size: eval(
+    cond(zoom()>=17, 10,
+                     8
+  )));
+  set .waterway;
+}
+
+line.waterway
+{
+  width: 0;
+}
+
+line.waterway::label {
+  layer: 11;
+  text-position: line;
+  text-spacing: 256;
+  text-halo-color: #7eb9e3;
+  text-halo-radius: 1;
+  text-color: #156299;
+  font-style: italic;
+}
