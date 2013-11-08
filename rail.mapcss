@@ -6,6 +6,8 @@ canvas
   width: 2;
   width: 4;
   width: 6;
+  width: 8;
+  width: 10;
   casing-width: 1;
   casing-width: 2;
   casing-width: 3;
@@ -86,4 +88,12 @@ line.railway[usage=yard]::dash
 {
   color: #707070;
   z-index: 14.3;
+}
+
+line.railway|z12-[bridge]::casing
+{
+  width: eval(prop('width', 'default') + prop('casing-width', 'default') * 2);
+  casing-width: 1;
+  casing-color: #000000;
+  color: #ffffff00;
 }
