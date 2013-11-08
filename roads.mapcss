@@ -315,7 +315,7 @@ line.path|z15-[tunnel]
 {
   color: #a7a7a7;
 }
-line[tunnel]
+line.highway_type[tunnel]
 {
   text-halo-radius: 0;
   casing-dashes: 5,5;
