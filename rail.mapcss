@@ -12,7 +12,16 @@ canvas
   casing-width: 2;
   casing-width: 3;
   casing-width: 4;
+  offset: -1;
+  offset: 1;
+  offset: -1.5;
+  offset: 1.5;
+  offset: -2;
+  offset: 2;
 }
+
+/* railway=rail */
+// TODO: tracks=n
 
 line|z5-11[railway=rail][usage=main]::rail
 {
@@ -106,4 +115,49 @@ line.railway|z12-[tunnel]::casing
 line.railway|z12-[tunnel]::dash
 {
   dashes: 0,2,1,7;
+}
+
+/* railway=tram/light_rail */
+line[railway=tram],
+line[railway=lightrail],
+line[railway=narrow_gauge]
+{
+  set .railway_tram;
+}
+
+line.railway_tram|z11-14::rail
+{
+  color: #606060;
+  width: eval(
+    cond(zoom()>13, 1,
+                    0.5
+  ));
+  z-index: 13;
+}
+line.railway_tram|z15-::rail
+{
+  color: #606060;
+  width: 1;
+  offset: eval(
+    cond(zoom()>=18, -2,
+    cond(zoom()>=16, -1.5,
+                     -1
+  )));
+  z-index: 13;
+}
+line.railway_tram|z15-::rail2
+{
+  color: #606060;
+  width: 1;
+  offset: eval(
+    cond(zoom()>=18, 2,
+    cond(zoom()>=16, 1.5,
+                     1
+  )));
+  z-index: 13;
+}
+line.railway_tram|z15-[tunnel]::rail,
+line.railway_tram|z15-[tunnel]::rail2
+{
+  dashes: 5,5;
 }
