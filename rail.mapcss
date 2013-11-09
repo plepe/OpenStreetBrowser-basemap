@@ -138,14 +138,21 @@ line.railway_tram|z15-::rail
 {
   color: #606060;
   width: 1;
+  z-index: 13;
+}
+
+// show two rails when there are several tracks or on highways with no tracks defined
+line.railway_tram|z15-[tracks>1]::rail,
+line.railway_tram|z15-[highway][!tracks]::rail
+{
   offset: eval(
     cond(zoom()>=18, -2,
     cond(zoom()>=16, -1.5,
                      -1
   )));
-  z-index: 13;
 }
-line.railway_tram|z15-::rail2
+line.railway_tram|z15-[tracks>1]::rail2,
+line.railway_tram|z15-[highway][!tracks]::rail2
 {
   color: #606060;
   width: 1;
