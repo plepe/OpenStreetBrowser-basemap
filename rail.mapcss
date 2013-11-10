@@ -67,7 +67,7 @@ line.railway::rail
 {
   color: #606060;
   casing-color: #b7b8cc;
-  z-index: 14;
+  z-index: 14.1;
 }
 line.railway[usage=main]::rail
 {
@@ -78,14 +78,14 @@ line.railway[usage=siding]::rail,
 line.railway[usage=yard]::rail
 {
   color: #707070;
-  z-index: 14.3;
+  z-index: 14;
 }
 
 line.railway::dash
 {
   color: #606060;
   object-z-index: 1;
-  z-index: 14;
+  z-index: 14.1;
 }
 line.railway[usage=main]::dash
 {
@@ -96,7 +96,7 @@ line.railway[usage=siding]::dash,
 line.railway[usage=yard]::dash
 {
   color: #707070;
-  z-index: 14.3;
+  z-index: 14;
 }
 
 line.railway|z12-[bridge]::casing
