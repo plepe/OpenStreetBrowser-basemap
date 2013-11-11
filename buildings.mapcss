@@ -1,0 +1,139 @@
+area|z13-[building]
+{
+  set .building;
+  fill-color: #cc5029;
+}
+area.building[amenity=place_of_worship]
+{
+  fill-color: #af29cc;
+}
+area.building[railway=platform],
+area.building[aeroway=terminal],
+area.building[aeroway=heilpad],
+area.building[aerialway=station],
+area.building[amenity=ferry_terminal]
+{
+  fill-color: #2935cc;
+}
+area.building[power=generator],
+area.building[man_made=gasometer],
+area.building[man_made=wastewater_plant],
+area.building[man_made=watermill],
+area.building[man_made=water_tower],
+area.building[man_made=windmill],
+area.building[man_made=works],
+area.building[man_made=reservoir_covered]
+{
+  fill-color: #2935cc;
+}
+area.building[amenity=college],
+area.building[amenity=cinema],
+area.building[amenity=kindergarten],
+area.building[amenity=library],
+area.building[amenity=school],
+area.building[amenity=university]
+{
+  fill-color: #e327ae;
+}
+area.building[amenity=theatre],
+area.building[amenity=arts_centre],
+area.building[amenity=cinema],
+area.building[amenity=fountain],
+area.building[amenity=studio],
+area.building[tourism=museum],
+area.building[tourism=artwork],
+area.building[tourism=attraction],
+area.building[tourism=viewpoint],
+area.building[tourism=theme_park],
+area.building[tourism=zoo]
+{
+  fill-color: #ff5745;
+}
+area.building[shop]
+{
+  fill-color: #ffce33;
+}
+area.building[amenity=hospital],
+area.building[amenity=emergency_phone],
+area.building[amenity=fire_station],
+area.building[amenity=police]
+{
+  fill-color: #df0e26;
+}
+area.building[amenity=pharmacy],
+area.building[amenity=baby_hatch],
+area.building[amenity=dentist],
+area.building[amenity=doctors],
+area.building[amenity=veterinary]
+{
+  fill-color: #13ff6c;
+}
+area.building[amenity=government],
+area.building[amenity=gouvernment],
+area.building[amenity=public_building],
+area.building[amenity=court_house],
+area.building[amenity=embassy],
+area.building[amenity=prison],
+area.building[amenity=townhall],
+area.building[amenity=post_office]
+{
+  fill-color: #f0b215;
+}
+area.building[military]
+{
+  fill-color: #6a8420;
+}
+area.building[historic]
+{
+  fill-color: #e09c25;
+}
+area.building[building=residential],
+area.building[building=apartments],
+area.building[building=appartments],
+area.building[building=block],
+area.building[building=flats]
+{
+  fill-color: #cc8725;
+}
+area.building[amenity=bicycle_parking],
+area.building[amenity=bicycle_rental],
+area.building[amenity=shelter],
+area.building[leisure=sports_centre],
+area.building[leisure=stadium],
+area.building[leisure=track],
+area.building[leisure=pitch],
+area.building[leisure=ice_rink],
+area.building[sport]
+{
+  fill-color: #16cc86;
+}
+
+area.building
+{
+  layer: -9;
+}
+area.building|z15::building_trans
+{
+  color: #0000007f;
+  width: 0.5;
+  fill-opacity: 0.25;
+  fill-color: eval(prop('fill-color', 'default'));
+}
+area.building|z16::building_trans
+{
+  color: #000000af;
+  width: 0.5;
+  fill-opacity: 0.375;
+  fill-color: eval(prop('fill-color', 'default'));
+}
+area.building|z17-::building_trans
+{
+  color: #000000;
+  width: 0.75;
+  fill-opacity: 0.5;
+  fill-color: eval(prop('fill-color', 'default'));
+}
+area.building::building_trans
+{
+  z-index: 26;
+}

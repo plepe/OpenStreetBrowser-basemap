@@ -7,3 +7,4 @@ canvas {
 @import url("roads.mapcss");
 @import url("rail.mapcss");
 @import url("places.mapcss");
+@import url("buildings.mapcss");
