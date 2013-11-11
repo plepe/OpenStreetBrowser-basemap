@@ -343,3 +343,84 @@ line.highway_type::label {
   font-size: eval(prop('font-size', 'default'));
   text: eval(cond(prop('font-size'); tag(name)));
 }
+
+/* Highway Areas */
+// TODO: casing on same layer as lines
+area|z11-[highway=pedestrian]
+{
+  color: #a0a0a0;
+  linejoin: round;
+  linecap: round;
+  fill-color: #cdcdcd;
+  set .highway_area;
+}
+area|z11-[highway=pedestrian][tunnel]
+{
+  fill-color: #a7a7a7;
+}
+area|z11-[amenity=parking]
+{
+  fill-color: #e0e0e0;
+  set .highway_area;
+}
+area|z11-[amenity=parking][tunnel]
+{
+  fill-color: #b7c6d1;
+}
+area.highway_area
+{
+  set area=eval(area(prop("geo")));
+}
+area.highway_area[tunnel]
+{
+  dashes: 5,5;
+  fill-color: #a7a7a7;
+}
+area.highway_area[bridge]
+{
+  color: #000000;
+}
+area.highway_area::casing
+{
+  layer: -10;
+  color: eval(prop('color', 'default'));
+  width: eval(
+    cond(zoom()>=16, 3,
+    cond(zoom()>=15, 2,
+                     1
+  )));
+}
+
+
+// label
+area|z18-[highway=pedestrian]::label,
+area|z14-[highway=pedestrian][area>500]::label {
+  text-halo-radius: 1;
+  font-size: 8;
+  text-wrap-width: 20;
+  text: name;
+  text-halo-color: #cdcdcd;
+  text-color: #000000;
+  layer: 10;
+  z-index: -1;
+}
+area|z15-[highway=pedestrian][area>1500][area<=6000]::label {
+  text-halo-radius: 1;
+  font-size: 10;
+  text-wrap-width: 20;
+  text: name;
+  text-halo-color: #cdcdcd;
+  text-color: #000000;
+  layer: 10;
+  z-index: -2;
+}
+area|z15-[highway=pedestrian][area>6000]::label {
+  text-halo-radius: 1;
+  font-size: 12;
+  text-wrap-width: 20;
+  text: name;
+  text-halo-color: #cdcdcd;
+  text-color: #000000;
+  layer: 10;
+  z-index: -3;
+}
