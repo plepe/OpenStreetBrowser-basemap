@@ -286,6 +286,13 @@ line.highway_type[bridge]
 {
   casing-color: #303030;
 }
+line|z13-[highway=steps]::road_feature
+{
+  dashes: 1,4;
+  color: #707070;
+  width: eval(prop('width', 'default'));
+  z-index: 25;
+}
 
 line|z10-[highway=primary][tunnel],
 line|z10-[highway=primary_link][tunnel]
