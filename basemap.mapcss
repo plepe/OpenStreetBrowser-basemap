@@ -8,3 +8,4 @@ canvas {
 @import url("rail.mapcss");
 @import url("places.mapcss");
 @import url("buildings.mapcss");
+@import url("housenumbers.mapcss");

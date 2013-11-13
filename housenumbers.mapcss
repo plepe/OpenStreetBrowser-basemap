@@ -1,0 +1,17 @@
+node|z17-[addr:housenumber]::housenumber,
+area|z17-[addr:housenumber]::housenumber
+{
+  font-size: 8;
+  text-color: #505050;
+  text-halo-radius: 0;
+  layer: 10;
+  z-index: 100;
+  text: addr:housenumber;
+}
+line|z17-[addr:interpolation]::housenumber
+{
+  color: #505050;
+  width: 0.5;
+  dashes: 2,4;
+  layer: 7;
+}
