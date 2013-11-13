@@ -132,9 +132,7 @@ area|z5-[landuse=industrial],
 area|z5-[amenity=bus_station],
 area|z5-[aeroway=aerodrome],
 area|z5-[aeroway=apron],
-area|z5-[power=station],
-area|z5-[power=sub_station],
-area|z5-[power=generator]
+area|z5-[power]
 {
   fill-color: #b7b8cc;
   set .landuse;

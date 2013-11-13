@@ -22,7 +22,8 @@ area.building[man_made=watermill],
 area.building[man_made=water_tower],
 area.building[man_made=windmill],
 area.building[man_made=works],
-area.building[man_made=reservoir_covered]
+area.building[man_made=reservoir_covered],
+area.building[power]
 {
   fill-color: #2935cc;
 }
