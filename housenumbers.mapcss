@@ -15,3 +15,24 @@ line|z17-[addr:interpolation]::housenumber
   dashes: 2,4;
   layer: 7;
 }
+
+/* Find point on nearby street closest to the address-point (or centroid of area) */
+line[highway] near[index=1][distance<100] node|z17-[addr:housenumber]::housenumber_tmp,
+line[highway] near[index=1][distance<100] area|z17-[addr:housenumber]::housenumber_tmp {
+  geo: eval(line_interpolate_point(parent_geo(), line_locate_point(parent_geo(), centroid(prop(geo)))));
+  set .housenumber_has_street;
+}
+
+/* Now build a line parallel to the street on top of the address-point, which will hold the label */
+node.housenumber_has_street|z17-[addr:housenumber]::housenumber,
+area.housenumber_has_street|z17-[addr:housenumber]::housenumber
+{
+  geo: eval(centroid(prop(geo)));
+  geo: eval(rotate(line(
+    translate(prop(geo), '15px', 0),
+    translate(prop(geo), '-15px', 0)
+      ),
+      0-azimuth(prop(geo), prop(geo, housenumber_tmp))
+    ));
+  text-position: line;
+}
