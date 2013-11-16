@@ -355,10 +355,10 @@ line.highway_type::label {
 // TODO: casing on same layer as lines
 area|z11-[highway=pedestrian]
 {
-  color: #a0a0a0;
+  color: #909090;
+  fill-color: #909090;
   linejoin: round;
   linecap: round;
-  fill-color: #cdcdcd;
   set .highway_area;
 }
 area|z11-[highway=pedestrian][tunnel]
@@ -406,7 +406,7 @@ area|z14-[highway=pedestrian][area>500]::label {
   font-size: 8;
   text-wrap-width: 20;
   text: name;
-  text-halo-color: #cdcdcd;
+  text-halo-color: #909090;
   text-color: #000000;
   layer: 10;
   z-index: -1;
@@ -416,7 +416,7 @@ area|z15-[highway=pedestrian][area>1500][area<=6000]::label {
   font-size: 10;
   text-wrap-width: 20;
   text: name;
-  text-halo-color: #cdcdcd;
+  text-halo-color: #909090;
   text-color: #000000;
   layer: 10;
   z-index: -2;
@@ -426,7 +426,7 @@ area|z15-[highway=pedestrian][area>6000]::label {
   font-size: 12;
   text-wrap-width: 20;
   text: name;
-  text-halo-color: #cdcdcd;
+  text-halo-color: #909090;
   text-color: #000000;
   layer: 10;
   z-index: -3;
