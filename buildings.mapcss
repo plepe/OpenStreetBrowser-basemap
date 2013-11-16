@@ -137,4 +137,5 @@ area.building|z17-::building_trans
 area.building::building_trans
 {
   z-index: 26;
+  layer: eval(prop(layer) + 0.1);
 }
