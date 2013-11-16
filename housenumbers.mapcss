@@ -23,7 +23,7 @@ line[highway] near[distance<100] area|z17-[addr:housenumber]::housenumber_tmp {
   set .housenumber_street_geo = eval(
     cond(tag(".housenumber_street_geo"),
       tag(".housenumber_street_geo"),
-      cond(tag("addr:street") == parent_tag("name"),
+      cond(tag("addr:street") eq parent_tag("name"),
         parent_geo(),
         ''
       )
@@ -31,14 +31,14 @@ line[highway] near[distance<100] area|z17-[addr:housenumber]::housenumber_tmp {
 }
 
 /* Now build a line parallel to the street on top of the address-point, which will hold the label */
-node.housenumber_street_geo|z17-[addr:housenumber]::housenumber,
-area.housenumber_street_geo|z17-[addr:housenumber]::housenumber
+node|z17-[addr:housenumber][.housenumber_street_geo!='']::housenumber,
+area|z17-[addr:housenumber][.housenumber_street_geo!='']::housenumber
 {
   // calculate centroid (at least for areas)
   geo: eval(centroid(prop(geo)));
 
   // Find point on nearby street closest to the address-point (or centroid of area)
-  set .geo_on_street = eval(line_interpolate_point(tag(".housenumber_street_geo", line_locate_point(parent_geo(), prop(geo))));
+  set .geo_on_street = eval(line_interpolate_point(tag('.housenumber_street_geo'), line_locate_point(tag('.housenumber_street_geo'), prop(geo))));
 
   geo: eval(rotate(line(
     translate(prop(geo), '15px', 0),
