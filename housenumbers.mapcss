@@ -7,6 +7,7 @@ area|z17-[addr:housenumber]::housenumber
   layer: 10;
   z-index: 100;
   text: addr:housenumber;
+  set .has_housenumber;
 }
 line|z17-[addr:interpolation]::housenumber
 {
@@ -16,10 +17,16 @@ line|z17-[addr:interpolation]::housenumber
   layer: 7;
 }
 
+/* Remove housenumbers inside areas with the same housenumber */
+area[addr:housenumber] near[distance=0] node.has_housenumber|z17-::housenumber {
+  unset .has_housenumber;
+  text: ;
+}
+
 /* Check all highways near the housenumber and if the name is correct save the street's geometry to tag ".housenumber_street_geo" */
 // TODO: we assume that the function is called with increasing distance
-line[highway] near[distance<100] node|z17-[addr:housenumber]::housenumber_tmp,
-line[highway] near[distance<100] area|z17-[addr:housenumber]::housenumber_tmp {
+line[highway] near[distance<100] node.has_housenumber|z17-::housenumber_tmp,
+line[highway] near[distance<100] area.has_housenumber|z17-::housenumber_tmp {
   set .housenumber_street_geo = eval(
     cond(tag(".housenumber_street_geo"),
       tag(".housenumber_street_geo"),
@@ -31,8 +38,8 @@ line[highway] near[distance<100] area|z17-[addr:housenumber]::housenumber_tmp {
 }
 
 /* Now build a line parallel to the street on top of the address-point, which will hold the label */
-node|z17-[addr:housenumber][.housenumber_street_geo!='']::housenumber,
-area|z17-[addr:housenumber][.housenumber_street_geo!='']::housenumber
+node.has_housenumber|z17-[.housenumber_street_geo!='']::housenumber,
+area.has_housenumber|z17-[.housenumber_street_geo!='']::housenumber
 {
   // calculate centroid (at least for areas)
   geo: eval(centroid(prop(geo)));
