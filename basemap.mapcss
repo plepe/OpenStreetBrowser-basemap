@@ -9,3 +9,4 @@ canvas {
 @import url("places.mapcss");
 @import url("buildings.mapcss");
 @import url("housenumbers.mapcss");
+@import url("boundaries.mapcss");
