@@ -335,8 +335,11 @@ line.highway_type::base_casing {
   casing-width: eval(prop('casing-width', 'default'));
   casing-color: eval(prop('casing-color', 'default'));
   casing-dashes: eval(prop('casing-dashes', 'default'));
-  casing-linecap: eval(prop('casing-linecap', 'default'));
   width: eval(prop('width', 'default'));
+}
+line.highway_type[tunnel]::base_casing
+{
+  casing-linecap: none;
 }
 line.highway_type::label {
   layer: 11;
