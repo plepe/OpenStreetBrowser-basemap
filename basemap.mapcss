@@ -6,6 +6,7 @@ canvas {
 @import url("water.mapcss");
 @import url("roads.mapcss");
 @import url("rail.mapcss");
+@import url("aeroway.mapcss");
 @import url("places.mapcss");
 @import url("buildings.mapcss");
 @import url("housenumbers.mapcss");
