@@ -2,118 +2,118 @@
  * TODO: translation in smaller letters
  * TODO: point-allow-overlap=true
  */
-node[place=city][population>1000000]
+node[place=city][population>1000000]::place
 {
   z-index: 1;
 }
 
-node|z4-5[place=city][population>=1000000],
-node|z6-7[place=city][population>=200000],
-node|z7[place=city],
-node|z8-9[place=town][population>=30000],
-node|z9[place=town],
-node|z11-12[place=village],
-node|z13-14[place=hamlet],
-node|z15-16[place=isolated_dwelling]
+node|z4-5[place=city][population>=1000000]::place,
+node|z6-7[place=city][population>=200000]::place,
+node|z7[place=city]::place,
+node|z8-9[place=town][population>=30000]::place,
+node|z9[place=town]::place,
+node|z11-12[place=village]::place,
+node|z13-14[place=hamlet]::place,
+node|z15-16[place=isolated_dwelling]::place
 {
   set .place=1; // small red dot, font-size 8
 }
-node|z6-9[place=city][population>=1000000],
-node|z8-9[place=city][population>=200000],
-node|z8-9[place=city],
-node|z10-12[place=town][population>=30000],
-node|z10-12[place=town],
-node|z13-14[place=village]
+node|z6-9[place=city][population>=1000000]::place,
+node|z8-9[place=city][population>=200000]::place,
+node|z8-9[place=city]::place,
+node|z10-12[place=town][population>=30000]::place,
+node|z10-12[place=town]::place,
+node|z13-14[place=village]::place
 {
   set .place=2; // big red dot, font-size 10
 }
-node|z17-[place=locality]
+node|z17-[place=locality]::place
 {
   set .place=3; // no dot, font-size 8
 }
-node|z1[place=continent],
-node|z13-14[place=suburb],
-node|z15-[place=hamlet],
-node|z17-[place=isolated_dwelling]
+node|z1[place=continent]::place,
+node|z13-14[place=suburb]::place,
+node|z15-[place=hamlet]::place,
+node|z17-[place=isolated_dwelling]::place
 {
   set .place=4; // no dot, font-size 10
 }
-node|z2-3[place=continent],
-node|z10-14[place=city][population>=1000000],
-node|z10-14[place=city][population>=200000],
-node|z10-14[place=city],
-node|z13-14[place=town][population>=30000],
-node|z13-14[place=town],
-node|z15-[place=suburb],
-node|z15-[place=village]
+node|z2-3[place=continent]::place,
+node|z10-14[place=city][population>=1000000]::place,
+node|z10-14[place=city][population>=200000]::place,
+node|z10-14[place=city]::place,
+node|z13-14[place=town][population>=30000]::place,
+node|z13-14[place=town]::place,
+node|z15-[place=suburb]::place,
+node|z15-[place=village]::place
 {
   set .place=5; // no dot, font-size 12
 }
-node|z2-3[place=country][population>=20000000],
-node|z4-5[place=country][population>=1000000][population<20000000],
-node|z6-7[place=country][population<1000000]
+node|z2-3[place=country][population>=20000000]::place,
+node|z4-5[place=country][population>=1000000][population<20000000]::place,
+node|z6-7[place=country][population<1000000]::place
 {
   set .place=6; // no dot, font-size 8 bold
 }
-node|z4-5[place=country][population>=20000000],
-node|z6-7[place=country][population>=1000000][population<20000000],
-node|z8-9[place=country][population<1000000],
-node|z7-8[place=state],
-node|z9-11[place=region]
+node|z4-5[place=country][population>=20000000]::place,
+node|z6-7[place=country][population>=1000000][population<20000000]::place,
+node|z8-9[place=country][population<1000000]::place,
+node|z7-8[place=state]::place,
+node|z9-11[place=region]::place
 {
   set .place=7; // no dot, font-size 10 bold
 }
-node|z6-8[place=country][population>=20000000],
-node|z8-10[place=country][population>=1000000][population<20000000],
-node|z10[place=country][population<1000000],
-node|z11[place=state],
-node|z12-14[place=region]
+node|z6-8[place=country][population>=20000000]::place,
+node|z8-10[place=country][population>=1000000][population<20000000]::place,
+node|z10[place=country][population<1000000]::place,
+node|z11[place=state]::place,
+node|z12-14[place=region]::place
 {
   set .place=8; // no dot, font-size 12 bold
 }
 
-node[.place=1]::icon
+node[.place=1]::place_icon
 {
   icon-image: url('img/city5.png');
 }
-node[.place=1] {
+node[.place=1]::place {
   font-size: 8;
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 2;
   text-halo-color: #ffffff;
 }
-node[.place=2]::icon
+node[.place=2]::place_icon
 {
   icon-image: url('img/city7.png');
 }
-node[.place=2] {
+node[.place=2]::place {
   font-size: 10;
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 2;
   text-halo-color: #ffffff;
 }
-node[.place=3] {
+node[.place=3]::place {
   font-size: 8;
   text-color: #000000;
   text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
-node[.place=4] {
+node[.place=4]::place {
   font-size: 10;
   text-color: #000000;
   text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
-node[.place=5]
+node[.place=5]::place
 {
   font-size: 12;
   text-color: #000000;
   text-halo-radius: 2;
   text-halo-color: #ffffff;
 }
-node[.place=6]
+node[.place=6]::place
 {
   font-size: 8;
   text-color: #333333;
@@ -121,7 +121,7 @@ node[.place=6]
   text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
-node[.place=7]
+node[.place=7]::place
 {
   font-size: 10;
   text-color: #333333;
@@ -129,7 +129,7 @@ node[.place=7]
   text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
-node[.place=8]
+node[.place=8]::place
 {
   font-size: 12;
   text-color: #333333;
@@ -139,7 +139,7 @@ node[.place=8]
 }
 
 /* Water bodies (nodes) + Islands (nodes) */
-node|z2-5[place=ocean]
+node|z2-5[place=ocean]::place
 {
   text-color: #156299;
   text-halo-color: #7eb9e3;
@@ -157,7 +157,7 @@ node|z2-5[place=ocean]
   set .place;
 }
 
-node|z4-9[place=sea]
+node|z4-9[place=sea]::place
 {
   text-color: #156299;
   text-halo-color: #7eb9e3;
@@ -169,8 +169,8 @@ node|z4-9[place=sea]
   set .place;
 }
 
-node|z12-15[place=island],
-node|z15-[place=islet]
+node|z12-15[place=island]::place,
+node|z15-[place=islet]::place
 {
   text-color: #56533f;
   text-halo-color: #f2efd9;
@@ -181,10 +181,10 @@ node|z15-[place=islet]
 }
 
 /* Final */
-node.place {
+node.place::place {
   text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
   layer: 8;
 }
-node.place::icon {
+node.place::place_icon {
   layer: 9;
 }

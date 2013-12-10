@@ -1,10 +1,10 @@
 /* LANDUSE */
-area|z5-[waterway=dock],
-area|z5-[landuse=water],
-area|z5-[landuse=reservoir],
-area|z5-[landuse=lake],
-area|z5-[natural=water],
-area|z5-[landuse=basin]
+area|z5-[waterway=dock]::landuse,
+area|z5-[landuse=water]::landuse,
+area|z5-[landuse=reservoir]::landuse,
+area|z5-[landuse=lake]::landuse,
+area|z5-[natural=water]::landuse,
+area|z5-[landuse=basin]::landuse
 {
   fill-color: #7eb9e3;
   set .landuse;
@@ -13,20 +13,20 @@ area|z5-[landuse=basin]
   text-color: #156299;
   text-halo-color: #7eb9e3;
 }
-area|z5-[waterway=riverbank] {
+area|z5-[waterway=riverbank]::landuse {
   fill-color: #7eb9e3;
   set .landuse;
 }
 
-area|z5-[natural=land]
+area|z5-[natural=land]::landuse
 {
   fill-color: #f2efd9;
   set .landuse;
 }
-area|z5-[leisure=park],
-area|z5-[landuse=village_green],
-area|z5-[landuse=recreation_ground],
-area|z5-[landuse=grass]
+area|z5-[leisure=park]::landuse,
+area|z5-[landuse=village_green]::landuse,
+area|z5-[landuse=recreation_ground]::landuse,
+area|z5-[landuse=grass]::landuse
 {
   fill-color: #9ce69c;
   set .landuse;
@@ -35,217 +35,217 @@ area|z5-[landuse=grass]
   text-color: #000000;
   text-halo-color: #9ce69c;
 }
-area|z5-[leisure=golf_course],
-area|z5-[leisure=playground],
-area|z5-[leisure=sports_centre],
-area|z5-[leisure=track],
-area|z5-[leisure=pitch],
-area|z5-[leisure=water_park]
+area|z5-[leisure=golf_course]::landuse,
+area|z5-[leisure=playground]::landuse,
+area|z5-[leisure=sports_centre]::landuse,
+area|z5-[leisure=track]::landuse,
+area|z5-[leisure=pitch]::landuse,
+area|z5-[leisure=water_park]::landuse
 {
   fill-color: #8bccb3;
   set .landuse;
 }
-area|z5-[leisure=piste]
+area|z5-[leisure=piste]::landuse
 {
   fill-color: #faf7e0;
   set .landuse;
 }
-area|z5-[landuse=wood],
-area|z5-[landuse=forest],
-area|z5-[natural=wood],
-area|z5-[natural=scrub]
+area|z5-[landuse=wood]::landuse,
+area|z5-[landuse=forest]::landuse,
+area|z5-[natural=wood]::landuse,
+area|z5-[natural=scrub]::landuse
 {
   fill-color: #72c063;
   set .landuse;
 }
-area|z5-[natural=wetland],
-area|z5-[natural=marsh]
+area|z5-[natural=wetland]::landuse,
+area|z5-[natural=marsh]::landuse
 {
   fill-color: #96f992;
   set .landuse;
 }
-area|z5-[natural=glacier]
+area|z5-[natural=glacier]::landuse
 {
   fill-color: #84f9ea;
   set .landuse;
 }
 
-area|z5-[natural=scree],
-area|z5-[natural=heath]
+area|z5-[natural=scree]::landuse,
+area|z5-[natural=heath]::landuse
 {
   fill-color: #92da4e;
   set .landuse;
 }
 
-area|z5-[natural=mud]
+area|z5-[natural=mud]::landuse
 {
   fill-color: #cdc950;
   set .landuse;
 }
 
-area|z5-[natural=beach]
+area|z5-[natural=beach]::landuse
 {
   fill-color: #fad16c;
   set .landuse;
 }
 
-area|z5-[natural=cliff],
-area|z5-[natural=rock]
+area|z5-[natural=cliff]::landuse,
+area|z5-[natural=rock]::landuse
 {
   fill-color: #dedede;
   set .landuse;
 }
 
-area|z5-[landuse=cemetery]
+area|z5-[landuse=cemetery]::landuse
 {
   fill-color: #8acb94;
   set .landuse;
 }
-area|z14-[landuse=cemetery]
+area|z14-[landuse=cemetery]::landuse
 {
   fill-image: url('img/grave_yard.png');
   set .landuse;
 }
 
-area|z5-[landuse=common],
-area|z5-[landuse=garden],
-area|z5-[landuse=meadow],
-area|z5-[natural=meadow],
-area|z5-[natural=fell],
-area|z5-[landuse=farm],
-area|z5-[landuse=greenhouse_horticulture],
-area|z5-[landuse=farmyard],
-area|z5-[landuse=farmland],
-area|z5-[landuse=vineyard],
-area|z5-[landuse=orchard]
+area|z5-[landuse=common]::landuse,
+area|z5-[landuse=garden]::landuse,
+area|z5-[landuse=meadow]::landuse,
+area|z5-[natural=meadow]::landuse,
+area|z5-[natural=fell]::landuse,
+area|z5-[landuse=farm]::landuse,
+area|z5-[landuse=greenhouse_horticulture]::landuse,
+area|z5-[landuse=farmyard]::landuse,
+area|z5-[landuse=farmland]::landuse,
+area|z5-[landuse=vineyard]::landuse,
+area|z5-[landuse=orchard]::landuse
 {
   fill-color: #b0cc8a;
   set .landuse;
 }
 
-area|z5-[landuse=quarry],
-area|z5-[landuse=landfill],
-area|z5-[landuse=brownfield],
-area|z5-[landuse=railway],
-area|z5-[landuse=construction],
-area|z5-[landuse=industrial],
-area|z5-[amenity=bus_station],
-area|z5-[aeroway=aerodrome],
-area|z5-[aeroway=apron],
-area|z5-[power]
+area|z5-[landuse=quarry]::landuse,
+area|z5-[landuse=landfill]::landuse,
+area|z5-[landuse=brownfield]::landuse,
+area|z5-[landuse=railway]::landuse,
+area|z5-[landuse=construction]::landuse,
+area|z5-[landuse=industrial]::landuse,
+area|z5-[amenity=bus_station]::landuse,
+area|z5-[aeroway=aerodrome]::landuse,
+area|z5-[aeroway=apron]::landuse,
+area|z5-[power]::landuse
 {
   fill-color: #b7b8cc;
   set .landuse;
 }
 
-area|z5-[landuse=military],
-area|z5-[military=barracks],
-area|z5-[military=airfield]
+area|z5-[landuse=military]::landuse,
+area|z5-[military=barracks]::landuse,
+area|z5-[military=airfield]::landuse
 {
   fill-color: #93a65b;
   set .landuse;
 }
 
-area|z5-[landuse=residential],
-area|z5-[landuse=allotments]
+area|z5-[landuse=residential]::landuse,
+area|z5-[landuse=allotments]::landuse
 {
   fill-color: #ccb18b;
   set .landuse;
 }
 
-area|z5-[landuse=school],
-area|z5-[landuse=college],
-area|z5-[amenity=cinema],
-area|z5-[amenity=kindergarten],
-area|z5-[amenity=library],
-area|z5-[amenity=school],
-area|z5-[amenity=theatre],
-area|z5-[amenity=arts_centre],
-area|z5-[amenity=university]
+area|z5-[landuse=school]::landuse,
+area|z5-[landuse=college]::landuse,
+area|z5-[amenity=cinema]::landuse,
+area|z5-[amenity=kindergarten]::landuse,
+area|z5-[amenity=library]::landuse,
+area|z5-[amenity=school]::landuse,
+area|z5-[amenity=theatre]::landuse,
+area|z5-[amenity=arts_centre]::landuse,
+area|z5-[amenity=university]::landuse
 {
   fill-color: #e39ccf;
   set .landuse;
 }
 
-area|z5-[amenity=hospital],
-area|z5-[amenity=emergency_phone],
-area|z5-[amenity=fire_station],
-area|z5-[amenity=police]
+area|z5-[amenity=hospital]::landuse,
+area|z5-[amenity=emergency_phone]::landuse,
+area|z5-[amenity=fire_station]::landuse,
+area|z5-[amenity=police]::landuse
 {
   fill-color: #df9ea5;
   set .landuse;
 }
 
-area|z5-[amenity=pharmacy],
-area|z5-[amenity=baby_hatch],
-area|z5-[amenity=dentist],
-area|z5-[amenity=doctors],
-area|z5-[amenity=veterinary]
+area|z5-[amenity=pharmacy]::landuse,
+area|z5-[amenity=baby_hatch]::landuse,
+area|z5-[amenity=dentist]::landuse,
+area|z5-[amenity=doctors]::landuse,
+area|z5-[amenity=veterinary]::landuse
 {
   fill-color: #abffcb;
   set .landuse;
 }
 
-area|z5-[amenity=government],
-area|z5-[amenity=gouvernment],
-area|z5-[amenity=public_building],
-area|z5-[amenity=court_house],
-area|z5-[amenity=embassy],
-area|z5-[amenity=prison],
-area|z5-[amenity=townhall]
+area|z5-[amenity=government]::landuse,
+area|z5-[amenity=gouvernment]::landuse,
+area|z5-[amenity=public_building]::landuse,
+area|z5-[amenity=court_house]::landuse,
+area|z5-[amenity=embassy]::landuse,
+area|z5-[amenity=prison]::landuse,
+area|z5-[amenity=townhall]::landuse
 {
   fill-color: #f0dba5;
   set .landuse;
 }
 
-area|z5-[amenity=marketplace],
-area|z5-[shop]
+area|z5-[amenity=marketplace]::landuse,
+area|z5-[shop]::landuse
 {
   fill-color: #ffe285;
   set .landuse;
 }
 
-area|z5-[historic]
+area|z5-[historic]::landuse
 {
   fill-color: #e0c28d;
   set .landuse;
 }
 
-area|z5-[tourism]
+area|z5-[tourism]::landuse
 {
   fill-color: #cc8bbf;
   set .landuse;
 }
 
-area|z5-[place=island],
-area|z14-[place=islet]
+area|z5-[place=island]::landuse,
+area|z14-[place=islet]::landuse
 {
   text-color: #56533f;
   text-halo-color: #f2efd9;
   set .landuse_text;
 }
 
-area|z5-[region:type=mountain_range],
-area|z5-[type=mountain_range]
+area|z5-[region:type=mountain_range]::landuse,
+area|z5-[type=mountain_range]::landuse
 {
   text-color: #707070;
   text-halo-color: #a0a0a0;
   set .landuse_text;
 }
 
-area.landuse|z5- {
+area.landuse|z5-::landuse {
   layer: -10;
   set area=eval(area(prop("geo")));
   z-index: eval(-1*tag("area"));
 }
-area.landuse|z14- {
+area.landuse|z14-::landuse {
   color: eval(prop("fill-color"));
   width: 1;
   linecap: round;
   linejoin: round;
 }
 
-area|z5-[leisure=nature_reserve]
+area|z5-[leisure=nature_reserve]::landuse
 {
   color: #7acc49;
 
@@ -257,7 +257,7 @@ area|z5-[leisure=nature_reserve]
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
 }
 
-area.landuse_text|z5-[area>1500][area<=6000]::label {
+area.landuse_text|z5-[area>1500][area<=6000]::landuse_label {
   text-halo-radius: 1;
   font-size: 10;
   text-wrap-width: 20;
@@ -267,7 +267,7 @@ area.landuse_text|z5-[area>1500][area<=6000]::label {
   text-color: eval(prop("text-color", default));
   layer: 10;
 }
-area.landuse_text|z5-[area>6000][area<=500000]::label {
+area.landuse_text|z5-[area>6000][area<=500000]::landuse_label {
   text-halo-radius: 1;
   font-size: 12;
   font-style: italic;

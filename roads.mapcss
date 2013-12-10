@@ -36,7 +36,7 @@ canvas {
   font-size: 13;
 }
 
-line|z5-8[highway=motorway]
+line|z5-8[highway=motorway]::highway
 {
   color: #ff6838;
   width: eval(switch(zoom(),
@@ -47,7 +47,7 @@ line|z5-8[highway=motorway]
   ));
   z-index: 12;
 }
-line|z9-[highway=motorway]
+line|z9-[highway=motorway]::highway
 {
   set .highway_type=motorway;
   width: eval(round(power(zoom()-8, 1.2))+1);
@@ -56,7 +56,7 @@ line|z9-[highway=motorway]
   z-index: 12;
 }
 
-line|z5-8[highway=trunk]
+line|z5-8[highway=trunk]::highway
 {
   color: #ff8a00;
   width: eval(switch(zoom(),
@@ -67,7 +67,7 @@ line|z5-8[highway=trunk]
   ));
   z-index: 11;
 }
-line|z9-[highway=trunk]
+line|z9-[highway=trunk]::highway
 {
   set .highway_type=motorway;
   width: eval(round(power(zoom()-9, 1.2))+1);
@@ -76,8 +76,8 @@ line|z9-[highway=trunk]
   z-index: 11;
 }
 
-line|z6-9[highway=primary],
-line|z6-9[highway=primary_link]
+line|z6-9[highway=primary]::highway,
+line|z6-9[highway=primary_link]::highway
 {
   color: #deca00;
   width: eval(switch(zoom(),
@@ -87,7 +87,7 @@ line|z6-9[highway=primary_link]
   ));
   z-index: 10;
 }
-line|z10-[highway=primary]
+line|z10-[highway=primary]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-9, 1.2))+1);
@@ -96,7 +96,7 @@ line|z10-[highway=primary]
   z-index: 10;
 }
 
-line|z5-9[highway=secondary]
+line|z5-9[highway=secondary]::highway
 {
   color: #ded042;
   width: eval(switch(zoom(),
@@ -105,7 +105,7 @@ line|z5-9[highway=secondary]
   ));
   z-index: 9;
 }
-line|z10-[highway=secondary]
+line|z10-[highway=secondary]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-10, 1.2))+1);
@@ -114,7 +114,7 @@ line|z10-[highway=secondary]
   z-index: 9;
 }
 
-line|z8-11[highway=tertiary]
+line|z8-11[highway=tertiary]::highway
 {
   color: #ded896;
   width: eval(switch(zoom(),
@@ -123,7 +123,7 @@ line|z8-11[highway=tertiary]
   ));
   z-index: 8;
 }
-line|z11-[highway=tertiary]
+line|z11-[highway=tertiary]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-11, 1.2))+1);
@@ -132,9 +132,9 @@ line|z11-[highway=tertiary]
   z-index: 8;
 }
 
-line|z11-13[highway=road],
-line|z11-13[highway=unclassified],
-line|z11-13[highway=residential]
+line|z11-13[highway=road]::highway,
+line|z11-13[highway=unclassified]::highway,
+line|z11-13[highway=residential]::highway
 {
   color: #a0a0a0;
   width: eval(switch(zoom(),
@@ -144,9 +144,9 @@ line|z11-13[highway=residential]
   ));
   z-index: 7;
 }
-line|z14-[highway=road],
-line|z14-[highway=unclassified],
-line|z14-[highway=residential]
+line|z14-[highway=road]::highway,
+line|z14-[highway=unclassified]::highway,
+line|z14-[highway=residential]::highway
 {
   set .highway_type=minor;
   width: eval(round(power(zoom()-12, 1.2))+1);
@@ -155,8 +155,8 @@ line|z14-[highway=residential]
   z-index: 7;
 }
 
-line|z11-13[highway=pedestrian],
-line|z11-13[highway=living_street]
+line|z11-13[highway=pedestrian]::highway,
+line|z11-13[highway=living_street]::highway
 {
   color: #808080;
   width: eval(switch(zoom(),
@@ -166,8 +166,8 @@ line|z11-13[highway=living_street]
   ));
   z-index: 6;
 }
-line|z14-[highway=pedestrian],
-line|z14-[highway=living_street]
+line|z14-[highway=pedestrian]::highway,
+line|z14-[highway=living_street]::highway
 {
   set .highway_type=pedestrian;
   width: eval(round(power(zoom()-12, 1.2))+1);
@@ -176,7 +176,7 @@ line|z14-[highway=living_street]
   z-index: 6;
 }
 
-line|z12-14[highway=service]
+line|z12-14[highway=service]::highway
 {
   color: #a0a0a0;
   width: eval(switch(zoom(),
@@ -186,7 +186,7 @@ line|z12-14[highway=service]
   ));
   z-index: 5;
 }
-line|z15-[highway=service]
+line|z15-[highway=service]::highway
 {
   set .highway_type=pedestrian;
   width: eval(round(power(zoom()-13, 1.2))+1);
@@ -195,11 +195,11 @@ line|z15-[highway=service]
   z-index: 5;
 }
 
-line|z12-14[highway=footway],
-line|z12-14[highway=cycleway],
-line|z12-14[highway=bridleway],
-line|z12-14[highway=steps],
-line|z12-14[highway=platform]
+line|z12-14[highway=footway]::highway,
+line|z12-14[highway=cycleway]::highway,
+line|z12-14[highway=bridleway]::highway,
+line|z12-14[highway=steps]::highway,
+line|z12-14[highway=platform]::highway
 {
   color: #cdcdcd;
   width: eval(switch(zoom(),
@@ -209,11 +209,11 @@ line|z12-14[highway=platform]
   ));
   z-index: 4;
 }
-line|z15-[highway=footway],
-line|z15-[highway=cycleway],
-line|z15-[highway=bridleway],
-line|z15-[highway=steps],
-line|z15-[highway=platform]
+line|z15-[highway=footway]::highway,
+line|z15-[highway=cycleway]::highway,
+line|z15-[highway=bridleway]::highway,
+line|z15-[highway=steps]::highway,
+line|z15-[highway=platform]::highway
 {
   set .highway_type=footway;
   width: eval(round(power(zoom()-11, 0.7))+0);
@@ -222,7 +222,7 @@ line|z15-[highway=platform]
   z-index: 4;
 }
 
-line|z12-[highway=track]
+line|z12-[highway=track]::highway
 {
   color: #a77300;
   text-halo-color: #a77300;
@@ -237,7 +237,7 @@ line|z12-[highway=track]
   set .highway_type=small;
 }
 
-line|z12-[highway=path]
+line|z12-[highway=path]::highway
 {
   color: #a77300;
   text-halo-color: #a77300;
@@ -252,7 +252,7 @@ line|z12-[highway=path]
   set .highway_type=small;
 }
 
-line.highway_type
+line.highway_type::highway
 {
   casing-width: eval(round(0.5+prop(width)/4)/2);
   casing-color: #909090;
@@ -270,19 +270,19 @@ line.highway_type
   )))))));
   text-halo-radius: 1;
 }
-line|z16[.highway_type=small]
+line|z16[.highway_type=small]::highway
 {
   font-size: 8;
 }
-line|z17-[.highway_type=small]
+line|z17-[.highway_type=small]::highway
 {
   font-size: 10;
 }
-line[.highway_type=small][!bridge]
+line[.highway_type=small][!bridge]::highway
 {
   casing-width: ;
 }
-line.highway_type[bridge]
+line.highway_type[bridge]::highway
 {
   casing-color: #303030;
 }
@@ -290,73 +290,73 @@ line|z13-[highway=steps]::road_feature
 {
   dashes: 1,4;
   color: #707070;
-  width: eval(prop('width', 'default'));
+  width: eval(prop('width', 'highway'));
   z-index: 25;
 }
 
-line|z10-[highway=primary][tunnel],
-line|z10-[highway=primary_link][tunnel]
+line|z10-[highway=primary][tunnel]::highway,
+line|z10-[highway=primary_link][tunnel]::highway
 {
   color: #d8b321;
 }
-line|z10-[highway=motorway][tunnel],
-line|z10-[highway=motorway_link][tunnel]
+line|z10-[highway=motorway][tunnel]::highway,
+line|z10-[highway=motorway_link][tunnel]::highway
 {
   color: #ff916e;
 }
-line|z10-[highway=trunk][tunnel],
-line|z10-[highway=trunk_link][tunnel]
+line|z10-[highway=trunk][tunnel]::highway,
+line|z10-[highway=trunk_link][tunnel]::highway
 {
   color: #ffac4a;
 }
-line|z14-[highway=road][tunnel],
-line|z14-[highway=unclassified][tunnel],
-line|z14-[highway=residential][tunnel],
-line|z15-[highway=service][tunnel]
+line|z14-[highway=road][tunnel]::highway,
+line|z14-[highway=unclassified][tunnel]::highway,
+line|z14-[highway=residential][tunnel]::highway,
+line|z15-[highway=service][tunnel]::highway
 {
   color: #d9d9d9;
 }
-line|z14-[highway=pedestrian][tunnel],
-line|z14-[highway=living_street][tunnel],
-line.path|z15-[tunnel]
+line|z14-[highway=pedestrian][tunnel]::highway,
+line|z14-[highway=living_street][tunnel]::highway,
+line.path|z15-[tunnel]::highway
 {
   color: #a7a7a7;
 }
-line.highway_type[tunnel]
+line.highway_type[tunnel]::highway
 {
   text-halo-radius: 0;
   casing-dashes: 5,5;
   casing-linecap: butt;
 }
 
-line.highway_type::base_casing {
+line.highway_type::highway_base_casing {
   layer: -9;
   casing-linecap: round;
-  casing-width: eval(prop('casing-width', 'default'));
-  casing-color: eval(prop('casing-color', 'default'));
-  casing-dashes: eval(prop('casing-dashes', 'default'));
-  width: eval(prop('width', 'default'));
+  casing-width: eval(prop('casing-width', 'highway'));
+  casing-color: eval(prop('casing-color', 'highway'));
+  casing-dashes: eval(prop('casing-dashes', 'highway'));
+  width: eval(prop('width', 'highway'));
 }
-line.highway_type[tunnel]::base_casing
+line.highway_type[tunnel]::highway_base_casing
 {
   casing-linecap: none;
 }
-line.highway_type::label {
+line.highway_type::highway_label {
   layer: 11;
   text-position: line;
   text-spacing: 128;
-  font-size: eval(prop('font-size', 'default'));
-  text-halo-color: eval(prop('text-halo-color', 'default'));
-  text-halo-radius: eval(prop('text-halo-radius', 'default'));
-  text-color: eval(prop('text-color', 'default'));
-  font-style: eval(prop('font-style', 'default'));
-  font-size: eval(prop('font-size', 'default'));
+  font-size: eval(prop('font-size', 'highway'));
+  text-halo-color: eval(prop('text-halo-color', 'highway'));
+  text-halo-radius: eval(prop('text-halo-radius', 'highway'));
+  text-color: eval(prop('text-color', 'highway'));
+  font-style: eval(prop('font-style', 'highway'));
+  font-size: eval(prop('font-size', 'highway'));
   text: eval(cond(prop('font-size'); tag(name)));
 }
 
 /* Highway Areas */
 // TODO: casing on same layer as lines
-area|z11-[highway=pedestrian]
+area|z11-[highway=pedestrian]::highway
 {
   color: #909090;
   fill-color: #909090;
@@ -364,36 +364,36 @@ area|z11-[highway=pedestrian]
   linecap: round;
   set .highway_area;
 }
-area|z11-[highway=pedestrian][tunnel]
+area|z11-[highway=pedestrian][tunnel]::highway
 {
   fill-color: #a7a7a7;
 }
-area|z11-[amenity=parking]
+area|z11-[amenity=parking]::highway
 {
   fill-color: #e0e0e0;
   set .highway_area;
 }
-area|z11-[amenity=parking][tunnel]
+area|z11-[amenity=parking][tunnel]::highway
 {
   fill-color: #b7c6d1;
 }
-area.highway_area
+area.highway_area::highway
 {
   set area=eval(area(prop("geo")));
 }
-area.highway_area[tunnel]
+area.highway_area[tunnel]::highway
 {
   dashes: 5,5;
   fill-color: #a7a7a7;
 }
-area.highway_area[bridge]
+area.highway_area[bridge]::highway
 {
   color: #000000;
 }
-area.highway_area::casing
+area.highway_area::highway_casing
 {
   layer: -10;
-  color: eval(prop('color', 'default'));
+  color: eval(prop('color', 'highway'));
   width: eval(
     cond(zoom()>=16, 3,
     cond(zoom()>=15, 2,
@@ -403,8 +403,8 @@ area.highway_area::casing
 
 
 // label
-area|z18-[highway=pedestrian]::label,
-area|z14-[highway=pedestrian][area>500]::label {
+area|z18-[highway=pedestrian]::highway_label,
+area|z14-[highway=pedestrian][area>500]::highway_label {
   text-halo-radius: 1;
   font-size: 8;
   text-wrap-width: 20;
@@ -414,7 +414,7 @@ area|z14-[highway=pedestrian][area>500]::label {
   layer: 10;
   z-index: -1;
 }
-area|z15-[highway=pedestrian][area>1500][area<=6000]::label {
+area|z15-[highway=pedestrian][area>1500][area<=6000]::highway_label {
   text-halo-radius: 1;
   font-size: 10;
   text-wrap-width: 20;
@@ -424,7 +424,7 @@ area|z15-[highway=pedestrian][area>1500][area<=6000]::label {
   layer: 10;
   z-index: -2;
 }
-area|z15-[highway=pedestrian][area>6000]::label {
+area|z15-[highway=pedestrian][area>6000]::highway_label {
   text-halo-radius: 1;
   font-size: 12;
   text-wrap-width: 20;

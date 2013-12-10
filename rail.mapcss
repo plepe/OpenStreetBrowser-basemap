@@ -54,7 +54,7 @@ line|z12-[railway=rail]::rail
   )))));
   set .railway;
 }
-line|z12-[railway=rail]::dash
+line|z12-[railway=rail]::rail_dash
 {
   width: eval(
     cond(zoom()>=14, 6,
@@ -81,25 +81,25 @@ line.railway[usage=yard]::rail
   z-index: 14;
 }
 
-line.railway::dash
+line.railway::rail_dash
 {
   color: #606060;
   object-z-index: 1;
   z-index: 14.1;
 }
-line.railway[usage=main]::dash
+line.railway[usage=main]::rail_dash
 {
   color: #404040;
   z-index: 14.2;
 }
-line.railway[usage=siding]::dash,
-line.railway[usage=yard]::dash
+line.railway[usage=siding]::rail_dash,
+line.railway[usage=yard]::rail_dash
 {
   color: #707070;
   z-index: 14;
 }
 
-line.railway|z12-[bridge]::casing
+line.railway|z12-[bridge]::rail_casing
 {
   width: eval(prop('width', 'rail') + prop('casing-width', 'rail') * 2);
   casing-width: 1;
@@ -107,20 +107,20 @@ line.railway|z12-[bridge]::casing
   color: #ffffff00;
 }
 line.railway|z12-[tunnel]::rail,
-line.railway|z12-[tunnel]::casing
+line.railway|z12-[tunnel]::rail_casing
 {
   dashes: 5,5;
   casing-dashes: 5,5;
 }
-line.railway|z12-[tunnel]::dash
+line.railway|z12-[tunnel]::rail_dash
 {
   dashes: 0,2,1,7;
 }
 
 /* railway=tram/light_rail */
-line[railway=tram],
-line[railway=lightrail],
-line[railway=narrow_gauge]
+line[railway=tram]::rail,
+line[railway=lightrail]::rail,
+line[railway=narrow_gauge]::rail
 {
   set .railway_tram;
 }

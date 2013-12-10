@@ -1,115 +1,115 @@
-area|z13-[building]
+area|z13-[building]::building
 {
   set .building;
   fill-color: #cc5029;
 }
-area.building[amenity=place_of_worship]
+area.building[amenity=place_of_worship]::building
 {
   fill-color: #af29cc;
 }
-area.building[railway=platform],
-area.building[aeroway=terminal],
-area.building[aeroway=heilpad],
-area.building[aerialway=station],
-area.building[amenity=ferry_terminal]
+area.building[railway=platform]::building,
+area.building[aeroway=terminal]::building,
+area.building[aeroway=heilpad]::building,
+area.building[aerialway=station]::building,
+area.building[amenity=ferry_terminal]::building
 {
   fill-color: #2935cc;
 }
-area.building[power=generator],
-area.building[man_made=gasometer],
-area.building[man_made=wastewater_plant],
-area.building[man_made=watermill],
-area.building[man_made=water_tower],
-area.building[man_made=windmill],
-area.building[man_made=works],
-area.building[man_made=reservoir_covered],
+area.building[power=generator]::building,
+area.building[man_made=gasometer]::building,
+area.building[man_made=wastewater_plant]::building,
+area.building[man_made=watermill]::building,
+area.building[man_made=water_tower]::building,
+area.building[man_made=windmill]::building,
+area.building[man_made=works]::building,
+area.building[man_made=reservoir_covered]::building,
 area.building[power]
 {
   fill-color: #2935cc;
 }
-area.building[amenity=college],
-area.building[amenity=cinema],
-area.building[amenity=kindergarten],
-area.building[amenity=library],
-area.building[amenity=school],
-area.building[amenity=university]
+area.building[amenity=college]::building,
+area.building[amenity=cinema]::building,
+area.building[amenity=kindergarten]::building,
+area.building[amenity=library]::building,
+area.building[amenity=school]::building,
+area.building[amenity=university]::building
 {
   fill-color: #e327ae;
 }
-area.building[amenity=theatre],
-area.building[amenity=arts_centre],
-area.building[amenity=cinema],
-area.building[amenity=fountain],
-area.building[amenity=studio],
-area.building[tourism=museum],
-area.building[tourism=artwork],
-area.building[tourism=attraction],
-area.building[tourism=viewpoint],
-area.building[tourism=theme_park],
-area.building[tourism=zoo]
+area.building[amenity=theatre]::building,
+area.building[amenity=arts_centre]::building,
+area.building[amenity=cinema]::building,
+area.building[amenity=fountain]::building,
+area.building[amenity=studio]::building,
+area.building[tourism=museum]::building,
+area.building[tourism=artwork]::building,
+area.building[tourism=attraction]::building,
+area.building[tourism=viewpoint]::building,
+area.building[tourism=theme_park]::building,
+area.building[tourism=zoo]::building
 {
   fill-color: #ff5745;
 }
-area.building[shop]
+area.building[shop]::building
 {
   fill-color: #ffce33;
 }
-area.building[amenity=hospital],
-area.building[amenity=emergency_phone],
-area.building[amenity=fire_station],
-area.building[amenity=police]
+area.building[amenity=hospital]::building,
+area.building[amenity=emergency_phone]::building,
+area.building[amenity=fire_station]::building,
+area.building[amenity=police]::building
 {
   fill-color: #df0e26;
 }
-area.building[amenity=pharmacy],
-area.building[amenity=baby_hatch],
-area.building[amenity=dentist],
-area.building[amenity=doctors],
-area.building[amenity=veterinary]
+area.building[amenity=pharmacy]::building,
+area.building[amenity=baby_hatch]::building,
+area.building[amenity=dentist]::building,
+area.building[amenity=doctors]::building,
+area.building[amenity=veterinary]::building
 {
   fill-color: #13ff6c;
 }
-area.building[amenity=government],
-area.building[amenity=gouvernment],
-area.building[amenity=public_building],
-area.building[amenity=court_house],
-area.building[amenity=embassy],
-area.building[amenity=prison],
-area.building[amenity=townhall],
-area.building[amenity=post_office]
+area.building[amenity=government]::building,
+area.building[amenity=gouvernment]::building,
+area.building[amenity=public_building]::building,
+area.building[amenity=court_house]::building,
+area.building[amenity=embassy]::building,
+area.building[amenity=prison]::building,
+area.building[amenity=townhall]::building,
+area.building[amenity=post_office]::building
 {
   fill-color: #f0b215;
 }
-area.building[military]
+area.building[military]::building
 {
   fill-color: #6a8420;
 }
-area.building[historic]
+area.building[historic]::building
 {
   fill-color: #e09c25;
 }
-area.building[building=residential],
-area.building[building=apartments],
-area.building[building=appartments],
-area.building[building=block],
-area.building[building=flats]
+area.building[building=residential]::building,
+area.building[building=apartments]::building,
+area.building[building=appartments]::building,
+area.building[building=block]::building,
+area.building[building=flats]::building
 {
   fill-color: #cc8725;
 }
-area.building[amenity=bicycle_parking],
-area.building[amenity=bicycle_rental],
-area.building[amenity=shelter],
-area.building[leisure=sports_centre],
-area.building[leisure=stadium],
-area.building[leisure=track],
-area.building[leisure=pitch],
-area.building[leisure=ice_rink],
-area.building[sport]
+area.building[amenity=bicycle_parking]::building,
+area.building[amenity=bicycle_rental]::building,
+area.building[amenity=shelter]::building,
+area.building[leisure=sports_centre]::building,
+area.building[leisure=stadium]::building,
+area.building[leisure=track]::building,
+area.building[leisure=pitch]::building,
+area.building[leisure=ice_rink]::building,
+area.building[sport]::building
 {
   fill-color: #16cc86;
 }
 
-area.building
+area.building::building
 {
   layer: -9;
 }
