@@ -1,0 +1,61 @@
+/* Pipelines */
+line[man_made=pipeline]
+{
+  casing-color: #00009f;
+  color: #00009f;
+  z-index: 0;
+}
+line[man_made=pipeline][tunnel]
+{
+  casing-color: #6b6b9f;
+  color: #6b6b9f;
+}
+
+line|z7-9[man_made=pipeline]
+{
+  width: 0.5;
+}
+line|z10-12[man_made=pipeline]
+{
+  width: 1;
+}
+line|z13-14[man_made=pipeline]
+{
+  width: 1;
+  casing-width: 1;
+  dashes: 3,3;
+}
+line|z15-16[man_made=pipeline]
+{
+  width: 1;
+  casing-width: 1.5;
+  dashes: 4,4;
+}
+line|z17-[man_made=pipeline]
+{
+  width: 2;
+  casing-width: 1.5;
+  dashes: 5,5;
+}
+
+line|z13-[man_made=pipeline][type=water]
+{
+  color: #0000ff;
+}
+line|z13-[man_made=pipeline][type=oil]
+{
+  color: #000000;
+}
+line|z13-[man_made=pipeline][type=gas]
+{
+  color: #00e000;
+}
+line|z13-[man_made=pipeline][type=sewage]
+{
+  color: #647718;
+}
+line|z13-[man_made=pipeline][type=heat],
+line|z13-[man_made=pipeline][type=hot_water]
+{
+  color: #ff0000;
+}
