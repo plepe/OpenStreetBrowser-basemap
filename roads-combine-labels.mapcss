@@ -1,0 +1,31 @@
+/* Optional MapCSS file (need support for 'combine'):
+ * line strings of roads will be joined for labels - therefore it's less likely
+ * that a road doesn't get a label */
+
+line.highway_type::highway_label {
+  // copy current property values to tags
+  set .street-font-size=eval(prop('font-size'));
+  set .street-text-halo-color=eval(prop('text-halo-color'));
+  set .street-text-halo-radius=eval(prop('text-halo-radius'));
+  set .street-text-color=eval(prop('text-color'));
+  set .street-font-style=eval(prop('font-style'));
+  set .street-z-index=eval(prop('z-index'));
+
+  combine street eval(tag('highway') . '-' . tag('name'));
+  text: ;
+}
+
+street::highway_label {
+  geo: eval(line_merge(prop(geo)));
+  text: name;
+  text-position: line;
+  text-spacing: 128;
+
+  font-size: eval(tag('.street-font-size'));
+  text-halo-color: eval(tag('.street-text-halo-color'));
+  text-halo-radius: eval(tag('.street-text-halo-radius'));
+  text-color: eval(tag('.street-text-color'));
+  font-style: eval(tag('.street-font-style'));
+  z-index: eval(tag('.street-z-index'));
+  layer: 11;
+}

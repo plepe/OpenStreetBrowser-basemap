@@ -5,6 +5,7 @@ canvas {
 @import url("landuse.mapcss");
 @import url("water.mapcss");
 @import url("roads.mapcss");
+@import url("roads-combine-labels.mapcss");
 @import url("rail.mapcss");
 @import url("aeroway.mapcss");
 @import url("pipelines.mapcss");
