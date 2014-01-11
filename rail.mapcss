@@ -51,7 +51,7 @@ line|z12-[railway=rail]::rail
     cond(zoom()>=14, 3,
     cond(zoom()>=12, 2,
                      1
-  )))));
+  ))));
   set .railway;
 }
 line|z12-[railway=rail]::rail_dash
@@ -59,7 +59,7 @@ line|z12-[railway=rail]::rail_dash
   width: eval(
     cond(zoom()>=14, 6,
                      4
-  );
+  ));
   dashes: 0,2,1,2;
 }
 
