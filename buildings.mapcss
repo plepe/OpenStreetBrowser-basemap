@@ -118,21 +118,21 @@ area.building|z15::building_trans
   color: #0000007f;
   width: 0.5;
   fill-opacity: 0.25;
-  fill-color: eval(prop('fill-color', 'default'));
+  fill-color: eval(prop('fill-color', 'building'));
 }
 area.building|z16::building_trans
 {
   color: #000000af;
   width: 0.5;
   fill-opacity: 0.375;
-  fill-color: eval(prop('fill-color', 'default'));
+  fill-color: eval(debug(prop('fill-color', 'building')));
 }
 area.building|z17-::building_trans
 {
   color: #000000;
   width: 0.75;
   fill-opacity: 0.5;
-  fill-color: eval(prop('fill-color', 'default'));
+  fill-color: eval(prop('fill-color', 'building'));
 }
 area.building::building_trans
 {
