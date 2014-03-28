@@ -248,12 +248,6 @@ area.landuse|z14-::landuse {
 area|z5-[leisure=nature_reserve]::landuse
 {
   color: #7acc49;
-
-  // make sure the following eval statement works
-  width: 1;
-  width: 2;
-  width: 4;
-
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
 }
 
