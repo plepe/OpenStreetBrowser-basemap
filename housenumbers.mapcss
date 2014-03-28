@@ -6,7 +6,7 @@ area|z17-[addr:housenumber]::housenumber
   text-halo-radius: 0;
   layer: 10;
   z-index: 100;
-  text: addr:housenumber;
+  text: eval(tag('addr:housenumber'));
   set .has_housenumber;
 }
 line|z17-[addr:interpolation]::housenumber
