@@ -2,7 +2,6 @@
  * they don't interfere with casings of roads on the same layer (often
  * the rendering of waterways is larger than the bridge).
  */
-
 /* TODO: as long as we can't set width from eval ... */
 canvas {
   casing-width: 16.5;
@@ -47,13 +46,15 @@ line|z11-[waterway=river]::waterway
   // on lower zoom levels we use the same curve as for highways but smaller; on higher zoom levels we assume 20m as default width
   // we could eval the tag 'width' or 'est_width', but most larger rivers have natural=riverbank anyway, therefore we don't need wide lines (even worse, they could obscure islands, ...)
 
-  casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('20m')))/2);
+  //casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('20m')))/2);
+  casing-width: eval(round(power(zoom()-9, 1.1)+0)/2);
   set .waterway;
 }
 
 line|z11-[waterway=canal]::waterway
 {
-  casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('18m')))/2);
+  //casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('18m')))/2);
+  casing-width: eval(round(power(zoom()-9, 1.1)+0)/2);
   set .waterway;
 }
 
@@ -72,14 +73,18 @@ line|z10-14[waterway=stream]::waterway
 {
   casing-width: eval(switch(zoom(),
     "10;11", 0.5,
-    "12;13", 1,
-    "14", 1.5
-  )/2);
+             1
+  ));
   set .waterway;
 }
 line|z15-[waterway=stream]::waterway
 {
-  casing-width: eval(round(max(2, metric('3m')))/2);
+  //casing-width: eval(round(max(2, metric('3m')))/2);
+  casing-width: eval(switch(zoom(),
+    "15;16", 2,
+             4
+  ));
+
   set .waterway;
 }
 line|z15-[waterway=stream]::waterway_label
