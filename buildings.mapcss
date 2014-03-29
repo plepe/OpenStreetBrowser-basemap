@@ -125,7 +125,7 @@ area.building|z16::building_trans
   color: #000000af;
   width: 0.5;
   fill-opacity: 0.375;
-  fill-color: eval(debug(prop('fill-color', 'building')));
+  fill-color: eval(prop('fill-color', 'building'));
 }
 area.building|z17-::building_trans
 {
