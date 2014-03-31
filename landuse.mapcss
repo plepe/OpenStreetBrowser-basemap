@@ -30,10 +30,7 @@ area|z5-[landuse=grass]::landuse
 {
   fill-color: #9ce69c;
   set .landuse;
-
   set .landuse_text;
-  text-color: #000000;
-  text-halo-color: #9ce69c;
 }
 area|z5-[leisure=golf_course]::landuse,
 area|z5-[leisure=playground]::landuse,
@@ -251,23 +248,21 @@ area|z5-[leisure=nature_reserve]::landuse
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
 }
 
-area.landuse_text|z5-[area>1500][area<=6000]::landuse_label {
+area.landuse_text|z5-[area>1500][area<=6000]::landuse {
   text-halo-radius: 1;
   font-size: 10;
   text-wrap-width: 20;
   font-style: italic;
   text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
-  text-halo-color: eval(prop("text-halo-color", default));
-  text-color: eval(prop("text-color", default));
-  layer: 10;
+  text-color: #000000;
+  text-halo-color: eval(prop('fill-color'));
 }
-area.landuse_text|z5-[area>6000][area<=500000]::landuse_label {
+area.landuse_text|z5-[area>6000][area<=500000]::landuse {
   text-halo-radius: 1;
   font-size: 12;
   font-style: italic;
   text-wrap-width: 20;
   text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
-  text-halo-color: eval(prop("text-halo-color", default));
-  text-color: eval(prop("text-color", default));
-  layer: 10;
+  text-color: #000000;
+  text-halo-color: eval(prop('fill-color'));
 }
