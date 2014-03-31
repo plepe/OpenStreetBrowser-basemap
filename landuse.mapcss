@@ -1,4 +1,7 @@
 /* LANDUSE */
+area::landuse {
+  text-color: #000000;
+}
 area|z5-[waterway=dock]::landuse,
 area|z5-[landuse=water]::landuse,
 area|z5-[landuse=reservoir]::landuse,
@@ -7,21 +10,19 @@ area|z5-[natural=water]::landuse,
 area|z5-[landuse=basin]::landuse
 {
   fill-color: #7eb9e3;
-  set .landuse;
-
-  set .landuse_text;
+  set .landuse = larger;
   text-color: #156299;
   text-halo-color: #7eb9e3;
 }
 area|z5-[waterway=riverbank]::landuse {
   fill-color: #7eb9e3;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[natural=land]::landuse
 {
   fill-color: #f2efd9;
-  set .landuse;
+  set .landuse = larger;
 }
 area|z5-[leisure=park]::landuse,
 area|z5-[landuse=village_green]::landuse,
@@ -29,8 +30,7 @@ area|z5-[landuse=recreation_ground]::landuse,
 area|z5-[landuse=grass]::landuse
 {
   fill-color: #9ce69c;
-  set .landuse;
-  set .landuse_text;
+  set .landuse = larger;
 }
 area|z5-[leisure=golf_course]::landuse,
 area|z5-[leisure=playground]::landuse,
@@ -64,7 +64,7 @@ area|z5-[natural=marsh]::landuse
 area|z5-[natural=glacier]::landuse
 {
   fill-color: #84f9ea;
-  set .landuse;
+  set .landuse = larger;
 }
 
 area|z5-[natural=scree]::landuse,
@@ -248,21 +248,21 @@ area|z5-[leisure=nature_reserve]::landuse
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
 }
 
-area.landuse_text|z5-[area>1500][area<=6000]::landuse {
+area|z5-[.landuse=larger][area>1500][area<=6000]::landuse,
+area|z5-[.landuse=yes][area>3000][area<=12000]::landuse {
   text-halo-radius: 1;
   font-size: 10;
   text-wrap-width: 20;
   font-style: italic;
   text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
-  text-color: #000000;
   text-halo-color: eval(prop('fill-color'));
 }
-area.landuse_text|z5-[area>6000][area<=500000]::landuse {
+area|z5-[.landuse=larger][area>6000][area<=500000]::landuse,
+area|z5-[.landuse=yes][area>12000][area<=500000]::landuse {
   text-halo-radius: 1;
   font-size: 12;
   font-style: italic;
   text-wrap-width: 20;
   text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
-  text-color: #000000;
   text-halo-color: eval(prop('fill-color'));
 }
