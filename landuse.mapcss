@@ -237,8 +237,8 @@ area|z5-[type=mountain_range]::landuse
 
 area.landuse|z5-::landuse {
   layer: -10;
-  set area=eval(area(prop("geo")));
-  z-index: eval(-1*tag("area"));
+  set .area=eval(area(prop("geo")));
+  z-index: eval(-1*tag(".area"));
 }
 area.landuse|z14-::landuse {
   color: eval(prop("fill-color"));
@@ -247,8 +247,8 @@ area.landuse|z14-::landuse {
   linejoin: round;
 }
 
-area|z5-[.landuse=larger][area>1500][area<=6000]::landuse,
-area|z5-[.landuse=yes][area>3000][area<=12000]::landuse {
+area|z5-[.landuse=larger][.area>1500][.area<=6000]::landuse,
+area|z5-[.landuse=yes][.area>3000][.area<=12000]::landuse {
   text-halo-radius: 1;
   font-size: 10;
   text-wrap-width: 20;
@@ -262,8 +262,8 @@ area|z5-[.landuse=yes][area>3000][area<=12000]::landuse {
     prop('text-halo-color')
   ));
 }
-area|z5-[.landuse=larger][area>6000][area<=500000]::landuse,
-area|z5-[.landuse=yes][area>12000][area<=500000]::landuse {
+area|z5-[.landuse=larger][.area>6000][.area<=500000]::landuse,
+area|z5-[.landuse=yes][.area>12000][.area<=500000]::landuse {
   text-halo-radius: 1;
   font-size: 12;
   font-style: italic;
