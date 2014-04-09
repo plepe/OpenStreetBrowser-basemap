@@ -1,6 +1,6 @@
 /* LANDUSE */
 area::landuse {
-  text-color: #000000;
+  text-color: ; // remove text-color - it will be set later-on
 }
 area|z5-[waterway=dock]::landuse,
 area|z5-[landuse=water]::landuse,
@@ -261,6 +261,8 @@ area|z5-[.landuse=yes][.area>3000][.area<=12000]::landuse {
     prop('fill-color') . '7f',
     prop('text-halo-color')
   ));
+  // if a text-color is already defined use this, otherwise take darkended fill-color
+  text-color: eval(cond(prop('text-color'), prop('text-color'), lighten(prop('fill-color'), -1.5)));
 }
 area|z5-[.landuse=larger][.area>6000][.area<=500000]::landuse,
 area|z5-[.landuse=yes][.area>12000][.area<=500000]::landuse {
@@ -276,4 +278,6 @@ area|z5-[.landuse=yes][.area>12000][.area<=500000]::landuse {
     prop('fill-color') . '7f',
     prop('text-halo-color')
   ));
+  // if a text-color is already defined use this, otherwise take darkended fill-color
+  text-color: eval(cond(prop('text-color'), prop('text-color'), lighten(prop('fill-color'), -1.5)));
 }
