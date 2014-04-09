@@ -80,7 +80,7 @@ node[.place=1]::place {
   font-size: 8;
   text-offset: 5;
   text-color: #000000;
-  text-halo-radius: 2;
+  text-halo-radius: 1;
   text-halo-color: #ffffff;
 }
 node[.place=2]::place_icon
@@ -91,7 +91,7 @@ node[.place=2]::place {
   font-size: 10;
   text-offset: 5;
   text-color: #000000;
-  text-halo-radius: 2;
+  text-halo-radius: 1.5;
   text-halo-color: #ffffff;
 }
 node[.place=3]::place {
