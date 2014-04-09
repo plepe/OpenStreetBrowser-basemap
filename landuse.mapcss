@@ -29,6 +29,7 @@ area|z5-[landuse=recreation_ground]::landuse,
 area|z5-[landuse=grass]::landuse
 {
   fill-color: #9ce69c;
+  text-color: #328a32;
   set .landuse = larger;
 }
 area|z5-[leisure=golf_course]::landuse,
