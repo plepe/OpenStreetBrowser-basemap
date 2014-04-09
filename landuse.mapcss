@@ -39,12 +39,12 @@ area|z5-[leisure=pitch]::landuse,
 area|z5-[leisure=water_park]::landuse
 {
   fill-color: #8bccb3;
-  set .landuse;
+  set .landuse = no_text;
 }
 area|z5-[leisure=piste]::landuse
 {
   fill-color: #faf7e0;
-  set .landuse;
+  set .landuse = no_text;
 }
 area|z5-[landuse=wood]::landuse,
 area|z5-[landuse=forest]::landuse,
@@ -95,19 +95,23 @@ area|z5-[natural=rock]::landuse
 area|z5-[landuse=cemetery]::landuse
 {
   fill-color: #8acb94;
-  set .landuse;
+  set .landuse = no_text;
 }
 area|z14-[landuse=cemetery]::landuse
 {
   fill-image: url('img/grave_yard.png');
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[landuse=common]::landuse,
 area|z5-[landuse=garden]::landuse,
 area|z5-[landuse=meadow]::landuse,
 area|z5-[natural=meadow]::landuse,
-area|z5-[natural=fell]::landuse,
+area|z5-[natural=fell]::landuse
+{
+  fill-color: #b0cc8a;
+  set .landuse;
+}
 area|z5-[landuse=farm]::landuse,
 area|z5-[landuse=greenhouse_horticulture]::landuse,
 area|z5-[landuse=farmyard]::landuse,
@@ -116,7 +120,7 @@ area|z5-[landuse=vineyard]::landuse,
 area|z5-[landuse=orchard]::landuse
 {
   fill-color: #b0cc8a;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[landuse=quarry]::landuse,
@@ -131,7 +135,7 @@ area|z5-[aeroway=apron]::landuse,
 area|z5-[power]::landuse
 {
   fill-color: #b7b8cc;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[landuse=military]::landuse,
@@ -139,14 +143,14 @@ area|z5-[military=barracks]::landuse,
 area|z5-[military=airfield]::landuse
 {
   fill-color: #93a65b;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[landuse=residential]::landuse,
 area|z5-[landuse=allotments]::landuse
 {
   fill-color: #ccb18b;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[landuse=school]::landuse,
@@ -160,7 +164,7 @@ area|z5-[amenity=arts_centre]::landuse,
 area|z5-[amenity=university]::landuse
 {
   fill-color: #e39ccf;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[amenity=hospital]::landuse,
@@ -169,7 +173,7 @@ area|z5-[amenity=fire_station]::landuse,
 area|z5-[amenity=police]::landuse
 {
   fill-color: #df9ea5;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[amenity=pharmacy]::landuse,
@@ -179,7 +183,7 @@ area|z5-[amenity=doctors]::landuse,
 area|z5-[amenity=veterinary]::landuse
 {
   fill-color: #abffcb;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[amenity=government]::landuse,
@@ -191,32 +195,33 @@ area|z5-[amenity=prison]::landuse,
 area|z5-[amenity=townhall]::landuse
 {
   fill-color: #f0dba5;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[amenity=marketplace]::landuse,
 area|z5-[shop]::landuse
 {
   fill-color: #ffe285;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[historic]::landuse
 {
   fill-color: #e0c28d;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[tourism]::landuse
 {
   fill-color: #cc8bbf;
-  set .landuse;
+  set .landuse = no_text;
 }
 
 area|z5-[leisure=nature_reserve]::landuse
 {
   color: #7acc49;
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
+  set .landuse;
 }
 
 area|z5-[place=island]::landuse,
