@@ -12,7 +12,11 @@ line|z5-11[railway=rail][usage=main]::rail
   )))));
   set .railway;
 }
-line|z8-11[railway=rail][usage!=siding][usage!=yard]::rail
+line|z8-11[railway=rail][usage!=siding][usage!=yard]::rail,
+line|z8-11[railway=subway]::rail,
+line|z8-11[railway=monorail]::rail,
+line|z8-11[railway=funicular]::rail,
+line|z8-11[railway=preserved]::rail
 {
   width: eval(
     cond(zoom()>=10, 1.5,
@@ -21,7 +25,11 @@ line|z8-11[railway=rail][usage!=siding][usage!=yard]::rail
   set .railway;
 }
 
-line|z12-[railway=rail]::rail
+line|z12-[railway=rail]::rail,
+line|z12-[railway=subway]::rail,
+line|z12-[railway=monorail]::rail,
+line|z12-[railway=funicular]::rail,
+line|z12-[railway=preserved]::rail
 {
   width: 2;
   casing-width: eval(
@@ -32,7 +40,7 @@ line|z12-[railway=rail]::rail
   ))));
   set .railway;
 }
-line|z12-[railway=rail]::rail_dash
+line.railway|z12-::rail_dash
 {
   width: eval(
     cond(zoom()>=14, 6,
@@ -47,7 +55,10 @@ line.railway::rail
   casing-color: #b7b8cc;
   z-index: 14.1;
 }
-line.railway[usage=main]::rail
+// highlight main tracks and
+// subway tracks which are part of a route
+line.railway[usage=main]::rail,
+relation[type=route] > line[railway=subway]::rail
 {
   color: #404040;
   z-index: 14.2;
@@ -65,7 +76,8 @@ line.railway::rail_dash
   object-z-index: 1;
   z-index: 14.1;
 }
-line.railway[usage=main]::rail_dash
+line.railway[usage=main]::rail_dash,
+relation[type=route] > line[railway=subway]::rail_dash
 {
   color: #404040;
   z-index: 14.2;
