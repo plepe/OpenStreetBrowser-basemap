@@ -146,3 +146,9 @@ line.railway_tram|z15-[tunnel]::rail2
 {
   dashes: 5,5;
 }
+
+// color tram tracks which are part of a route in darker color
+relation[type=route] > line.railway_tram::rail,
+relation[type=route] > line.railway_tram::rail2 {
+  color: #404040;
+}
