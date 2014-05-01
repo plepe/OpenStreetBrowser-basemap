@@ -17,6 +17,20 @@ line|z9-[highway=motorway]::highway
   text-halo-color: #ff6838;
   z-index: 12;
 }
+line|z9-[highway=motorway_link]::highway
+{
+  set .highway_type=motorway;
+  width: eval(
+    cond(zoom()>=14, round(power(zoom()-11, 1.2))+1,
+    cond(zoom()>=13, 4,
+    cond(zoom()>=10, 3,
+    cond(zoom()>= 9, 2
+  )))));
+  color: #ff6838;
+  text-halo-color: #ff6838;
+  z-index: 11.5;
+}
+
 
 line|z5-8[highway=trunk]::highway
 {
@@ -36,6 +50,19 @@ line|z9-[highway=trunk]::highway
   color: #ff8a00;
   text-halo-color: #ff8a00;
   z-index: 11;
+}
+line|z9-[highway=trunk_link]::highway
+{
+  set .highway_type=motorway;
+  width: eval(
+    cond(zoom()>=14, round(power(zoom()-11, 1.2))+1,
+    cond(zoom()>=13, 4,
+    cond(zoom()>=10, 3,
+    cond(zoom()>= 9, 2
+  )))));
+  color: #ff8a00;
+  text-halo-color: #ff8a00;
+  z-index: 10.5;
 }
 
 line|z6-9[highway=primary]::highway,
