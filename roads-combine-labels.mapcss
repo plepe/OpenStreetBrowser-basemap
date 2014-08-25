@@ -24,7 +24,7 @@ street::highway_label {
   font-size: eval(tag('.street-font-size'));
   text-halo-color: eval(tag('.street-text-halo-color'));
   text-halo-radius: eval(tag('.street-text-halo-radius'));
-  text-color: eval(tag('.street-text-color'));
+  text-color: eval(any(tag('.street-text-color'), '#000000'));
   font-style: eval(tag('.street-font-style'));
   z-index: eval(tag('.street-z-index'));
   layer: 11;
