@@ -2,7 +2,7 @@
  * line strings of roads will be joined for labels - therefore it's less likely
  * that a road doesn't get a label */
 
-line.highway_type::highway_label {
+line.highway_type[prop('text')]::highway_label {
   // copy current property values to tags
   set .street-font-size=eval(prop('font-size'));
   set .street-text-halo-color=eval(prop('text-halo-color'));
