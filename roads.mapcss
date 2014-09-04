@@ -348,7 +348,7 @@ line.highway_type::highway_label {
 area|z11-[highway=pedestrian]::highway
 {
   color: #909090;
-  fill-color: #909090;
+  fill-color: #cdcdcd;
   linejoin: round;
   linecap: round;
   set .highway_area;
