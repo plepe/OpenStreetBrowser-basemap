@@ -140,11 +140,17 @@ area|z10-[power]::landuse
 }
 
 area|z10-[landuse=military]::landuse,
-area|z10-[military=barracks]::landuse,
 area|z10-[military=airfield]::landuse
 {
-  fill-color: #93a65b;
   set .landuse = no_text;
+}
+area|z10-[landuse=military]::landuse_hatch,
+area|z10-[military=airfield]::landuse_hatch
+{
+  color: #93a65b;
+  width: 1;
+  fill-image: url("img/hatch-93a65b.svg");
+  layer: 80;
 }
 
 area|z10-[landuse=residential]::landuse,
@@ -220,11 +226,16 @@ area|z10-[tourism]::landuse
 
 area|z10-[leisure=nature_reserve]::landuse
 {
-  color: #7acc49;
   text-color: #7acc49;
   text-halo-color: lighten('#7acc49', 1.5);
-  width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
   set .landuse;
+}
+area|z10-[leisure=nature_reserve]::landuse_hatch
+{
+  color: #7acc49;
+  width: 1;
+  fill-image: url("img/hatch-7acc49.svg");
+  layer: 80;
 }
 
 area|z10-[place=island]::landuse,
