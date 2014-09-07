@@ -1,9 +1,21 @@
 /*
  * TODO: translation in smaller letters
  */
-node[place=city][population>1000000]::place
-{
-  z-index: 1;
+node[place=contintent]::place { z-index: 1; }
+node[place=country]::place { z-index: 2; }
+node[place=state]::place { z-index: 3; }
+node[place=city]::place { z-index: 4; }
+node[place=region]::place { z-index: 5; }
+node[place=island]::place { z-index: 6; }
+node[place=town]::place { z-index: 7; }
+node[place=village]::place { z-index: 8; }
+node[place=hamlet]::place { z-index: 9; }
+node[place=suburb]::place { z-index: 10; }
+node[place=locality]::place { z-index: 11; }
+node[place=islet]::place { z-index: 12; }
+node[place=isolated_dwelling]::place { z-index: 13; }
+node[population]::place {
+  z-index: eval(prop('z-index') - log(tag(population)) / 100);
 }
 
 node|z4-5[place=city][population>=1000000]::place,
