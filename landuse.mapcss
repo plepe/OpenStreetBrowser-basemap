@@ -274,7 +274,7 @@ area|z10-[.landuse=yes][.area>3000][.area<=12000]::landuse {
   font-size: 10;
   text-wrap-width: 20;
   font-style: italic;
-  text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
+  text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
   // if a fill-color is defined, use this as halo color (plus transparency),
   // otherwise keep current text-halo-color
   text-halo-color: eval(cond(
@@ -284,6 +284,7 @@ area|z10-[.landuse=yes][.area>3000][.area<=12000]::landuse {
   ));
   // if a text-color is already defined use this, otherwise take darkended fill-color
   text-color: eval(cond(prop('text-color'), prop('text-color'), lighten(prop('fill-color'), -1.5)));
+  max-width: 100;
 }
 area|z10-[.landuse=larger][.area>6000][.area<=500000]::landuse,
 area|z10-[.landuse=yes][.area>12000][.area<=500000]::landuse {
@@ -291,7 +292,7 @@ area|z10-[.landuse=yes][.area>12000][.area<=500000]::landuse {
   font-size: 12;
   font-style: italic;
   text-wrap-width: 20;
-  text: eval(cond(tag('name:en'), tag('name') . '\n' . tag('name:en'), tag('name')));
+  text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
   // if a fill-color is defined, use this as halo color (plus transparency),
   // otherwise keep current text-halo-color
   text-halo-color: eval(cond(
@@ -301,4 +302,5 @@ area|z10-[.landuse=yes][.area>12000][.area<=500000]::landuse {
   ));
   // if a text-color is already defined use this, otherwise take darkended fill-color
   text-color: eval(cond(prop('text-color'), prop('text-color'), lighten(prop('fill-color'), -1.5)));
+  max-width: 150;
 }
