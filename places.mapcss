@@ -1,6 +1,5 @@
 /*
  * TODO: translation in smaller letters
- * TODO: point-allow-overlap=true
  */
 node[place=city][population>1000000]::place
 {
@@ -75,6 +74,7 @@ node|z12-14[place=region]::place
 node[.place=1]::place_icon
 {
   icon-image: url('img/city5.png');
+  icon-ignore-placement: true;
 }
 node[.place=1]::place {
   font-size: 8;
@@ -86,6 +86,7 @@ node[.place=1]::place {
 node[.place=2]::place_icon
 {
   icon-image: url('img/city7.png');
+  icon-ignore-placement: true;
 }
 node[.place=2]::place {
   font-size: 10;
