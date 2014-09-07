@@ -221,6 +221,8 @@ area|z10-[tourism]::landuse
 area|z10-[leisure=nature_reserve]::landuse
 {
   color: #7acc49;
+  text-color: #7acc49;
+  text-halo-color: lighten('#7acc49', 1.5);
   width: eval(cond(zoom()>=14, 4, cond(zoom()>=12, 2, 1)));
   set .landuse;
 }
