@@ -249,10 +249,12 @@ area.landuse|z10-::landuse {
   z-index: eval(-1*tag(".area"));
 }
 area.landuse|z14-::landuse {
-  color: eval(prop("fill-color"));
-  width: 1;
   linecap: round;
   linejoin: round;
+}
+area.landuse|z14-[eval(!prop("width"))]::landuse {
+  color: eval(prop("fill-color"));
+  width: 1;
 }
 
 area|z10-[.landuse=larger][.area>1500][.area<=6000]::landuse,
