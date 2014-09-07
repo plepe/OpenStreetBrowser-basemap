@@ -238,7 +238,7 @@ area|z10-[leisure=nature_reserve]::landuse_hatch
   layer: 80;
 }
 
-area|z10-[place=island]::landuse,
+area|z5-[place=island]::landuse,
 area|z14-[place=islet]::landuse
 {
   text-color: #56533f;
@@ -246,8 +246,8 @@ area|z14-[place=islet]::landuse
   set .landuse = larger;
 }
 
-area|z10-[region:type=mountain_range]::landuse,
-area|z10-[type=mountain_range]::landuse
+area|z5-[region:type=mountain_range]::landuse,
+area|z5-[type=mountain_range]::landuse
 {
   text-color: #707070;
   text-halo-color: #a0a0a0;
