@@ -93,7 +93,7 @@ node[.place=1]::place {
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=2]::place_icon
 {
@@ -105,26 +105,26 @@ node[.place=2]::place {
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 1.5;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=3]::place {
   font-size: 8;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=4]::place {
   font-size: 10;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=5]::place
 {
   font-size: 12;
   text-color: #000000;
   text-halo-radius: 2;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=6]::place
 {
@@ -132,7 +132,7 @@ node[.place=6]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=7]::place
 {
@@ -140,7 +140,7 @@ node[.place=7]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=8]::place
 {
@@ -148,7 +148,7 @@ node[.place=8]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 
 /* Water bodies (nodes) + Islands (nodes) */
