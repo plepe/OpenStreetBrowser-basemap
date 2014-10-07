@@ -77,21 +77,33 @@ way|z14-[boundary=administrative][admin_level=4]::boundary {
 }
 
 // admin_level 3
+way|z4[boundary=administrative][admin_level=3]::boundary {
+  width: 0.25;
+  dashes: 2,1;
+}
+way|z5[boundary=administrative][admin_level=3]::boundary {
+  width: 0.5;
+  dashes: 3,1;
+}
+way|z6[boundary=administrative][admin_level=3]::boundary {
+  width: 0.75;
+  dashes: 3,1;
+}
 way|z7-8[boundary=administrative][admin_level=3]::boundary {
   width: 1.5;
-  dashes: 4,1;
+  dashes: 4,2;
 }
 way|z9-10[boundary=administrative][admin_level=3]::boundary {
   width: 2.5;
-  dashes: 4,1;
+  dashes: 4,2;
 }
 way|z11-13[boundary=administrative][admin_level=3]::boundary {
   width: 3.5;
-  dashes: 4,1;
+  dashes: 4,2;
 }
 way|z14-[boundary=administrative][admin_level=3]::boundary {
   width: 6;
-  dashes: 6,2;
+  dashes: 6,3;
 }
 
 // admin_level 2
