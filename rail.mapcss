@@ -6,9 +6,9 @@ line|z5-11[railway=rail][usage=main]::rail
   width: eval(
     cond(zoom()>=10, 2,
     cond(zoom()>=8, 1.5,
-    cond(zoom()>=6, 1,
-    cond(zoom()>=5, 0.5,
-    0.25
+    cond(zoom()>=7, 1,
+    cond(zoom()>=6, 0.5,
+    0.33
   )))));
   set .railway;
 }
