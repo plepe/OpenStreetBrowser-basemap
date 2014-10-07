@@ -1,10 +1,21 @@
 /*
  * TODO: translation in smaller letters
- * TODO: point-allow-overlap=true
  */
-node[place=city][population>1000000]::place
-{
-  z-index: 1;
+node[place=contintent]::place { z-index: 1; }
+node[place=country]::place { z-index: 2; }
+node[place=state]::place { z-index: 3; }
+node[place=city]::place { z-index: 4; }
+node[place=region]::place { z-index: 5; }
+node[place=island]::place { z-index: 6; }
+node[place=town]::place { z-index: 7; }
+node[place=village]::place { z-index: 8; }
+node[place=hamlet]::place { z-index: 9; }
+node[place=suburb]::place { z-index: 10; }
+node[place=locality]::place { z-index: 11; }
+node[place=islet]::place { z-index: 12; }
+node[place=isolated_dwelling]::place { z-index: 13; }
+node[population]::place {
+  z-index: eval(prop('z-index') - log(tag(population)) / 100);
 }
 
 node|z4-5[place=city][population>=1000000]::place,
@@ -75,43 +86,45 @@ node|z12-14[place=region]::place
 node[.place=1]::place_icon
 {
   icon-image: url('img/city5.png');
+  icon-ignore-placement: true;
 }
 node[.place=1]::place {
   font-size: 8;
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=2]::place_icon
 {
   icon-image: url('img/city7.png');
+  icon-ignore-placement: true;
 }
 node[.place=2]::place {
   font-size: 10;
   text-offset: 5;
   text-color: #000000;
   text-halo-radius: 1.5;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=3]::place {
   font-size: 8;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=4]::place {
   font-size: 10;
   text-color: #000000;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=5]::place
 {
   font-size: 12;
   text-color: #000000;
   text-halo-radius: 2;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=6]::place
 {
@@ -119,7 +132,7 @@ node[.place=6]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=7]::place
 {
@@ -127,7 +140,7 @@ node[.place=7]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 node[.place=8]::place
 {
@@ -135,7 +148,7 @@ node[.place=8]::place
   text-color: #333333;
   font-weight: bold;
   text-halo-radius: 1;
-  text-halo-color: #ffffff;
+  text-halo-color: #ffffffbf;
 }
 
 /* Water bodies (nodes) + Islands (nodes) */

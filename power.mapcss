@@ -6,13 +6,12 @@ line[power=minor_line]
   z-index: 0;
 }
 
-line|z5-7[power=line],
 line|z16-[power=minor_line]
 {
   width: 0.5;
   opacity: 0.8;
 }
-line|z8-12[power=line]
+line|z11-12[power=line]
 {
   width: 1;
   opacity: 0.6;
