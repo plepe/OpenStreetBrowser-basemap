@@ -158,6 +158,7 @@ node|z2-5[place=ocean]::place
   text-halo-color: #7eb9e3;
   text-halo-radius: 1;
   text-style: italic;
+  z-index: 15;
 
   font-size: eval(cond(zoom()>=5; 13;
                   cond(zoom()>=3; 10;
@@ -171,6 +172,7 @@ node|z4-9[place=sea]::place
   text-halo-color: #7eb9e3;
   text-halo-radius: 1;
   text-style: italic;
+  z-index: 16;
   font-size: eval(cond(zoom()>=8; 13;
                   cond(zoom()>=5; 10;
 		  cond(zoom()>=4;  8))));
