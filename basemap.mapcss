@@ -6,7 +6,7 @@
 <!-- Download Land Polygons (Large polygons split, Simplified not split) from http://openstreetmapdata.com/data in Mercator projection and unzipped in data/. -->
   <Style name="coastpoly">
     <Rule>
-      <PolygonSymbolizer fill="#f2efd9" />
+      <PolygonSymbolizer fill="#f2efd9" gamma="0.3" />
     </Rule>
   </Style>
 
