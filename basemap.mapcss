@@ -33,5 +33,6 @@
 @import url("buildings.mapcss");
 @import url("housenumbers.mapcss");
 @import url("boundaries.mapcss");
+@import url("barrier.mapcss");
   </style>
 </Map>

@@ -1,0 +1,54 @@
+line[barrier=wall]::barrier,
+line[barrier=retaining_wall]::barrier
+{
+  color: #584e22;
+  z-index: -1;
+  set .barrier;
+}
+line[barrier=fence]::barrier
+{
+  color: #584e22;
+  dashes: 3,3;
+  z-index: -1;
+  set .barrier;
+}
+line[barrier=hedge]::barrier
+{
+  color: #1a802a;
+  z-index: -1;
+  set .barrier;
+}
+
+line.barrier|z15::barrier
+{
+  width: 0.33;
+}
+line.barrier|z16-17::barrier
+{
+  width: 0.75;
+}
+line.barrier|z18-::barrier
+{
+  width: 1;
+}
+
+line|z11-12[barrier=city_wall]::barrier
+{
+  color: #584e22;
+  width: 0.5;
+}
+line|z13-14[barrier=city_wall]::barrier
+{
+  color: #584e22;
+  width: 1;
+}
+line|z15-17[barrier=city_wall]::barrier
+{
+  color: #584e22;
+  width: 2;
+}
+line|z17-[barrier=city_wall]::barrier
+{
+  color: #584e22;
+  width: 3;
+}
