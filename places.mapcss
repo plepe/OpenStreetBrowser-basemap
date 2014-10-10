@@ -157,7 +157,7 @@ node|z2-5[place=ocean]::place
   text-color: #156299;
   text-halo-color: #7eb9e3;
   text-halo-radius: 1;
-  text-style: italic;
+  font-style: italic;
   z-index: 15;
 
   font-size: eval(cond(zoom()>=5; 13;
@@ -171,7 +171,7 @@ node|z4-9[place=sea]::place
   text-color: #156299;
   text-halo-color: #7eb9e3;
   text-halo-radius: 1;
-  text-style: italic;
+  font-style: italic;
   z-index: 16;
   font-size: eval(cond(zoom()>=8; 13;
                   cond(zoom()>=5; 10;
@@ -185,7 +185,7 @@ node|z15-[place=islet]::place
   text-color: #56533f;
   text-halo-color: #f2efd9;
   text-halo-radius: 1;
-  text-style: italic;
+  font-style: italic;
   font-size: 10;
   set .place;
 }
