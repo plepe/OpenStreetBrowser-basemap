@@ -28,7 +28,7 @@ line|z9-[highway=motorway_link]::highway
   )))));
   color: #ff6838;
   text-halo-color: #ff6838;
-  z-index: 11.5;
+  z-index: 6.5;
 }
 
 
@@ -62,7 +62,7 @@ line|z9-[highway=trunk_link]::highway
   )))));
   color: #ff8a00;
   text-halo-color: #ff8a00;
-  z-index: 10.5;
+  z-index: 6.5;
 }
 
 line|z7-9[highway=primary]::highway,
