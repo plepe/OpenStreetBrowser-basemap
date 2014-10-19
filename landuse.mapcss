@@ -226,8 +226,8 @@ area|z10-[tourism]::landuse
 
 area|z10-[leisure=nature_reserve]::landuse
 {
-  text-color: #7acc49;
-  text-halo-color: lighten('#7acc49', 1.5);
+  text-color: lighten('#7acc49', -1.5);
+  text-halo-color: #7acc497f;
   set .landuse;
 }
 area|z10-[leisure=nature_reserve]::landuse_hatch
