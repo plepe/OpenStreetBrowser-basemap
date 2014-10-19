@@ -106,6 +106,10 @@ line.railway|z12-[tunnel]::rail_dash
 {
   dashes: 0,2,1,7;
 }
+line.railway|z5-11[tunnel]::rail
+{
+  dashes: 5,5;
+}
 
 /* railway=tram/light_rail */
 line[railway=tram]::rail,
