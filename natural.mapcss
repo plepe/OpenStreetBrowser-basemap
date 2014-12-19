@@ -1,0 +1,4 @@
+line|z12-[natural=cliff]::natural {
+  image: url('img/cliff.png');
+  layer: -9;
+}

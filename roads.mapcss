@@ -361,6 +361,7 @@ area|z11-[highway=pedestrian][tunnel]::highway
 area|z11-[amenity=parking]::highway
 {
   fill-color: #e0e0e0;
+  color: #a0a0a0;
   set .highway_area;
 }
 area|z11-[amenity=parking][tunnel]::highway
