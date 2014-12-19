@@ -338,6 +338,7 @@ line.highway_type::highway_label {
   text-halo-color: eval(prop('text-halo-color', 'highway'));
   text-halo-radius: eval(prop('text-halo-radius', 'highway'));
   text-color: eval(any(tag('.street-text-color'), '#000000'));
+  z-index: eval(prop('z-index', 'highway'));
   font-style: eval(prop('font-style', 'highway'));
   font-size: eval(prop('font-size', 'highway'));
   text: eval(cond(prop('font-size'); tag(name)));
