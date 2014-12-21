@@ -76,7 +76,8 @@ line|z7-9[highway=primary_link]::highway
   ));
   z-index: 10;
 }
-line|z10-[highway=primary]::highway
+line|z10-[highway=primary]::highway,
+line|z10-[highway=primary_link]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-9, 1.2))+1);
@@ -85,7 +86,8 @@ line|z10-[highway=primary]::highway
   z-index: 10;
 }
 
-line|z7-9[highway=secondary]::highway
+line|z7-9[highway=secondary]::highway,
+line|z7-9[highway=secondary_link]::highway
 {
   color: #ded042;
   width: eval(switch(zoom(),
@@ -94,7 +96,8 @@ line|z7-9[highway=secondary]::highway
   ));
   z-index: 9;
 }
-line|z10-[highway=secondary]::highway
+line|z10-[highway=secondary]::highway,
+line|z10-[highway=secondary_link]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-10, 1.2))+1);
@@ -103,7 +106,8 @@ line|z10-[highway=secondary]::highway
   z-index: 9;
 }
 
-line|z8-11[highway=tertiary]::highway
+line|z8-11[highway=tertiary]::highway,
+line|z8-11[highway=tertiary_link]::highway
 {
   color: #ded896;
   width: eval(switch(zoom(),
@@ -112,7 +116,8 @@ line|z8-11[highway=tertiary]::highway
   ));
   z-index: 8;
 }
-line|z11-[highway=tertiary]::highway
+line|z11-[highway=tertiary]::highway,
+line|z11-[highway=tertiary_link]::highway
 {
   set .highway_type=major;
   width: eval(round(power(zoom()-11, 1.2))+1);
