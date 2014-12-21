@@ -11,6 +11,7 @@ line[waterway]::waterway
 line|z5-10[waterway=river]::waterway,
 line|z5-10[waterway=canal]::waterway
 {
+  width: 0;
   casing-width: eval(switch(zoom(),
     "5;6", 0.5,
     "7", 1,
@@ -25,6 +26,7 @@ line|z11-[waterway=river]::waterway
   // we could eval the tag 'width' or 'est_width', but most larger rivers have natural=riverbank anyway, therefore we don't need wide lines (even worse, they could obscure islands, ...)
 
   //casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('20m')))/2);
+  width: 0;
   casing-width: eval(round(power(zoom()-9, 1.1)+0)/2);
   set .waterway;
 }
@@ -32,6 +34,7 @@ line|z11-[waterway=river]::waterway
 line|z11-[waterway=canal]::waterway
 {
   //casing-width: eval(round(max(power(zoom()-9, 1.1)+0, metric('18m')))/2);
+  width: 0;
   casing-width: eval(round(power(zoom()-9, 1.1)+0)/2);
   set .waterway;
 }
@@ -49,6 +52,7 @@ line|z12-[waterway=canal]::waterway_label
 
 line|z10-14[waterway=stream]::waterway
 {
+  width: 0;
   casing-width: eval(switch(zoom(),
     "10;11", 0.5,
              1
@@ -58,6 +62,7 @@ line|z10-14[waterway=stream]::waterway
 line|z15-[waterway=stream]::waterway
 {
   //casing-width: eval(round(max(2, metric('3m')))/2);
+  width: 0;
   casing-width: eval(switch(zoom(),
     "15;16", 2,
              4
@@ -73,11 +78,6 @@ line|z15-[waterway=stream]::waterway_label
                      8
   ));
   set .waterway;
-}
-
-line.waterway::waterway
-{
-  width: 0;
 }
 
 line.waterway::waterway_label {
