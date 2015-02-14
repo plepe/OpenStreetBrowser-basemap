@@ -63,6 +63,7 @@ area|z10-[natural=marsh]::landuse
 }
 area|z10-[natural=glacier]::landuse
 {
+  text-color: #2a98c8;
   fill-color: #84f9ea;
   set .landuse = larger;
 }
