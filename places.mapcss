@@ -192,7 +192,14 @@ node|z15-[place=islet]::place
 
 /* Final */
 node.place::place {
-  text: eval(cond(localized_tag('name') && (localized_tag('name') != tag('name')), tag('name') . '\n' . localized_tag('name'), tag('name')));
+  text: tag('name');
+  int_name: localized_tag('name');
+
+  /* check if name is "local name (int name)" -> if yes, drop last part */
+  match: regexp_match('^(.*) \\((.*)\\)$', prop('text'));
+  text: cond(prop('match') && get(prop('match'), 2) == prop('int_name'), get(prop('match'), 1), prop('text') );
+
+  text: cond(prop('int_name'), prop('text') . '\n' . prop('int_name'));
 }
 node.place::place {
   layer: 8;
