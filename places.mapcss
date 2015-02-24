@@ -191,15 +191,8 @@ node|z15-[place=islet]::place
 }
 
 /* Final */
-@media (max-pgmapcss-version: 0.8) {
-  node.place::place {
-    text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
-  }
-}
-@media (min-pgmapcss-version: 0.9) {
-  node.place::place {
-    text: eval(cond(localized_tag('name') && (localized_tag('name') != tag('name')), tag('name') . '\n' . localized_tag('name'), tag('name')));
-  }
+node.place::place {
+  text: eval(cond(localized_tag('name') && (localized_tag('name') != tag('name')), tag('name') . '\n' . localized_tag('name'), tag('name')));
 }
 node.place::place {
   layer: 8;

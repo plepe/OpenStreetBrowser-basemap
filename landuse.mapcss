@@ -304,15 +304,7 @@ area[.landuse=yes][.area>12000][.area<=500000]::landuse {
   max-width: 150;
 }
 
-@media (max-pgmapcss-version: 0.8) {
-  area[.landuse=larger][.area>750][.area<=500000]::landuse,
-  area[.landuse=yes][.area>3000][.area<=500000]::landuse {
-    text: eval(cond(tag('name:en') && (tag('name:en') != tag('name')), tag('name') . '\n' . tag('name:en'), tag('name')));
-  }
-}
-@media (min-pgmapcss-version: 0.9) {
-  area[.landuse=larger][.area>750][.area<=500000]::landuse,
-  area[.landuse=yes][.area>3000][.area<=500000]::landuse {
-    text: eval(cond(localized_tag('name') && (localized_tag('name') != tag('name')), tag('name') . '\n' . localized_tag('name'), tag('name')));
-  }
+area[.landuse=larger][.area>750][.area<=500000]::landuse,
+area[.landuse=yes][.area>3000][.area<=500000]::landuse {
+  text: eval(cond(localized_tag('name') && (localized_tag('name') != tag('name')), tag('name') . '\n' . localized_tag('name'), tag('name')));
 }
