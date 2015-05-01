@@ -1,3 +1,4 @@
+relation[boundary=administrative] > way::boundary,
 way[boundary=administrative]::boundary
 {
   color: #950bed;
@@ -5,11 +6,13 @@ way[boundary=administrative]::boundary
 }
 
 // admin_level >=9
+relation[boundary=administrative][admin_level>=9] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level>=9]::boundary
 {
   width: 1;
   dashes: 2,4;
 }
+relation[boundary=administrative][admin_level>=9] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level>=9]::boundary
 {
   width: 1.5;
@@ -17,13 +20,17 @@ way|z14-[boundary=administrative][admin_level>=9]::boundary
 }
 
 // admin_level 7, 8
+relation[boundary=administrative][admin_level=7] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=7]::boundary,
+relation[boundary=administrative][admin_level=8] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=8]::boundary
 {
   width: 1;
   dashes: 4,3;
 }
+relation[boundary=administrative][admin_level=7] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=7]::boundary,
+relation[boundary=administrative][admin_level=8] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=8]::boundary
 {
   width: 2;
@@ -31,103 +38,129 @@ way|z14-[boundary=administrative][admin_level=8]::boundary
 }
 
 // admin_level 6
+relation[boundary=administrative][admin_level=6] > way|z9-10::boundary,
 way|z9-10[boundary=administrative][admin_level=6]::boundary {
   width: 1;
   dashes: 2,2;
 }
+relation[boundary=administrative][admin_level=6] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=6]::boundary {
   width: 1.5;
   dashes: 2,2;
 }
+relation[boundary=administrative][admin_level=6] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=6]::boundary {
   width: 3;
   dashes: 2,2;
 }
 
 // admin_level 5
+relation[boundary=administrative][admin_level=5] > way|z7-8::boundary,
 way|z7-8[boundary=administrative][admin_level=5]::boundary {
   width: 0.75;
   dashes: 4,3;
 }
+relation[boundary=administrative][admin_level=5] > way|z9-10::boundary,
 way|z9-10[boundary=administrative][admin_level=5]::boundary {
   width: 1.5;
   dashes: 4,3;
 }
+relation[boundary=administrative][admin_level=5] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=5]::boundary {
   width: 2;
   dashes: 4,3;
 }
+relation[boundary=administrative][admin_level=5] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=5]::boundary {
   width: 4;
   dashes: 4,3;
 }
 
 // admin_level 4
+relation[boundary=administrative][admin_level=4] > way|z7-8::boundary,
 way|z7-8[boundary=administrative][admin_level=4]::boundary {
   width: 0.75;
 }
+relation[boundary=administrative][admin_level=4] > way|z9-10::boundary,
 way|z9-10[boundary=administrative][admin_level=4]::boundary {
   width: 1.5;
 }
+relation[boundary=administrative][admin_level=4] > way|z1-13::boundary,
 way|z11-13[boundary=administrative][admin_level=4]::boundary {
   width: 2;
 }
+relation[boundary=administrative][admin_level=4] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=4]::boundary {
   width: 4;
 }
 
 // admin_level 3
+relation[boundary=administrative][admin_level=3] > way|z4::boundary,
 way|z4[boundary=administrative][admin_level=3]::boundary {
   width: 0.25;
   dashes: 2,1;
 }
+relation[boundary=administrative][admin_level=3] > way|z5::boundary,
 way|z5[boundary=administrative][admin_level=3]::boundary {
   width: 0.5;
   dashes: 3,1;
 }
+relation[boundary=administrative][admin_level=3] > way|z6::boundary,
 way|z6[boundary=administrative][admin_level=3]::boundary {
   width: 0.75;
   dashes: 3,1;
 }
+relation[boundary=administrative][admin_level=3] > way|z7-8::boundary,
 way|z7-8[boundary=administrative][admin_level=3]::boundary {
   width: 1.5;
   dashes: 4,2;
 }
+relation[boundary=administrative][admin_level=3] > way|z9-10::boundary,
 way|z9-10[boundary=administrative][admin_level=3]::boundary {
   width: 2.5;
   dashes: 4,2;
 }
+relation[boundary=administrative][admin_level=3] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=3]::boundary {
   width: 3.5;
   dashes: 4,2;
 }
+relation[boundary=administrative][admin_level=3] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=3]::boundary {
   width: 6;
   dashes: 6,3;
 }
 
 // admin_level 2
+relation[boundary=administrative][admin_level=2] > way|z-3::boundary,
 way|z-3[boundary=administrative][admin_level=2]::boundary {
   width: 0.25;
 }
+relation[boundary=administrative][admin_level=2] > way|z4::boundary,
 way|z4[boundary=administrative][admin_level=2]::boundary {
   width: 0.5;
 }
+relation[boundary=administrative][admin_level=2] > way|z5::boundary,
 way|z5[boundary=administrative][admin_level=2]::boundary {
   width: 0.75;
 }
+relation[boundary=administrative][admin_level=2] > way|z6::boundary,
 way|z6[boundary=administrative][admin_level=2]::boundary {
   width: 1;
 }
+relation[boundary=administrative][admin_level=2] > way|z7-8::boundary,
 way|z7-8[boundary=administrative][admin_level=2]::boundary {
   width: 1.5;
 }
+relation[boundary=administrative][admin_level=2] > way|z9-10::boundary,
 way|z9-10[boundary=administrative][admin_level=2]::boundary {
   width: 2.5;
 }
+relation[boundary=administrative][admin_level=2] > way|z11-13::boundary,
 way|z11-13[boundary=administrative][admin_level=2]::boundary {
   width: 3.5;
 }
+relation[boundary=administrative][admin_level=2] > way|z14-::boundary,
 way|z14-[boundary=administrative][admin_level=2]::boundary {
   width: 6;
 }
